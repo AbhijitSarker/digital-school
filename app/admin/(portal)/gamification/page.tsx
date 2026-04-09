@@ -27,7 +27,7 @@ export default function GamificationPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Gamification" breadcrumb="admin / gamification" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
             <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Management</p>
@@ -35,7 +35,7 @@ export default function GamificationPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* XP Settings */}
           <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-5">
             <div className="flex items-center gap-3 mb-2">
@@ -139,7 +139,7 @@ export default function GamificationPage() {
               আইটেম যোগ করুন
             </button>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
             {[
               { name: 'হিন্ট বুস্টার', cost: '৫০', icon: 'lightbulb', stock: '∞' },
               { name: 'টাইম ফ্রিজ', cost: '৭৫', icon: 'hourglass_pause', stock: '∞' },

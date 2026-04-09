@@ -27,7 +27,7 @@ export default function AnalyticsPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Analytics" breadcrumb="admin / analytics" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
             <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Insights</p>
@@ -49,7 +49,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* KPI cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
           {kpis.map((k) => (
             <div key={k.label} className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 hover:-translate-y-0.5 transition-transform">
               <div className={`w-10 h-10 rounded-xl ${k.bg} flex items-center justify-center mb-4`}>
@@ -65,9 +65,9 @@ export default function AnalyticsPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* Bar chart */}
-          <div className="lg:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-7">
+          <div className="xl:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-5 md:p-7">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h3 className="text-xl font-headline font-bold text-primary">মাসিক অ্যাক্টিভিটি</h3>

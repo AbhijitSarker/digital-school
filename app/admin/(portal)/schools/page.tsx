@@ -22,7 +22,7 @@ export default function SchoolsPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Schools" breadcrumb="admin / schools" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
             <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Management</p>
@@ -35,7 +35,7 @@ export default function SchoolsPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট স্কুল', value: '১২৫', icon: 'domain', color: 'text-primary bg-primary/10' },
             { label: 'প্রিমিয়াম', value: '৪৪', icon: 'star', color: 'text-on-tertiary-fixed-variant bg-tertiary-fixed/50' },

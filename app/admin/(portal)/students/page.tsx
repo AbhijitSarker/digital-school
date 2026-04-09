@@ -32,7 +32,7 @@ export default function StudentsPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Students" breadcrumb="admin / students" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         {/* Header */}
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
@@ -46,7 +46,7 @@ export default function StudentsPage() {
         </div>
 
         {/* Summary cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট শিক্ষার্থী', value: '১২,৪৫০', icon: 'group', color: 'border-primary text-primary' },
             { label: 'সক্রিয়', value: '১০,৮৮০', icon: 'check_circle', color: 'border-emerald-500 text-emerald-600' },

@@ -23,7 +23,7 @@ export default function ChallengesPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Challenges" breadcrumb="admin / challenges" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
             <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Management</p>
@@ -36,7 +36,7 @@ export default function ChallengesPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট চ্যালেঞ্জ', value: '৮৬', icon: 'emoji_events', color: 'text-primary' },
             { label: 'চলমান', value: '৩', icon: 'play_circle', color: 'text-emerald-600' },
@@ -52,7 +52,7 @@ export default function ChallengesPage() {
         </div>
 
         {/* Challenge cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
           {challenges.map((c) => {
             const cfg = statusConfig[c.status];
             const pct = c.participants !== '—' && c.completions !== '—'

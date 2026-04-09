@@ -41,7 +41,7 @@ export default function AdminDashboard() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Dashboard" breadcrumb="dashboard / overview" />
 
-      <div className="p-8 space-y-8">
+        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
         {/* Welcome row */}
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Metrics bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
           {metrics.map((m) => (
             <div key={m.label} className={`bg-surface-container-lowest p-6 rounded-2xl shadow-sm border-b-4 ${m.border} hover:-translate-y-1 transition-transform`}>
               <div className={`w-10 h-10 rounded-xl ${m.iconBg} flex items-center justify-center mb-4`}>
@@ -70,9 +70,9 @@ export default function AdminDashboard() {
         </div>
 
         {/* Chart + Activity */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* Chart */}
-          <div className="lg:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-7 flex flex-col gap-4">
+          <div className="xl:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-5 md:p-7 flex flex-col gap-4">
             <div className="flex justify-between items-start flex-wrap gap-3">
               <div>
                 <h3 className="text-xl font-headline font-bold text-primary">শিক্ষার্থী বৃদ্ধির ধারা</h3>
@@ -123,7 +123,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Quick actions + top subjects */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
           {/* Quick Actions */}
           <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6">
             <h3 className="text-lg font-headline font-bold text-primary mb-4">দ্রুত কাজ</h3>

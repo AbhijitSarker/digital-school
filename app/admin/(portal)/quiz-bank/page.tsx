@@ -26,7 +26,7 @@ export default function QuizBankPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Quiz Bank" breadcrumb="admin / quiz-bank" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div>
             <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Management</p>
@@ -47,7 +47,7 @@ export default function QuizBankPage() {
         </div>
 
         {/* Summary */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট কুইজ', value: '৩৮৬', icon: 'quiz', color: 'text-primary' },
             { label: 'সক্রিয়', value: '২৮৮', icon: 'play_circle', color: 'text-emerald-600' },

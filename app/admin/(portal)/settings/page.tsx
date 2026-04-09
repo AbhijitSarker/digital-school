@@ -34,20 +34,20 @@ export default function SettingsPage() {
     <div className="flex flex-col min-h-screen">
       <AdminHeader title="Settings" breadcrumb="admin / settings" />
 
-      <div className="p-8 space-y-6">
+      <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div>
           <p className="text-xs font-label text-outline uppercase tracking-widest font-bold mb-1">Configuration</p>
           <h2 className="text-3xl font-headline font-extrabold text-primary tracking-tight">সিস্টেম সেটিংস</h2>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
           {/* Sidebar tabs */}
-          <div className="w-56 shrink-0 space-y-1">
+          <div className="w-full md:w-48 lg:w-56 shrink-0 flex md:flex-col gap-1 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all text-left ${activeTab === tab.id ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container'}`}
+                className={`shrink-0 w-full flex items-center gap-2 px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium transition-all text-left whitespace-nowrap ${activeTab === tab.id ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container'}`}
               >
                 <span className={`material-symbols-outlined ${activeTab === tab.id ? 'fill-icon' : ''}`} style={{ fontSize: '18px' }}>{tab.icon}</span>
                 {tab.label}
