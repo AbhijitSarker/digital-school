@@ -86,7 +86,7 @@ export default function ProgressPage() {
           {subjects.map((subject) => (
             <div
               key={subject.name}
-              className={`bg-surface-container-lowest p-5 md:p-6 rounded-xl shadow-sm hover:shadow-md transition-all group border-b-4 ${subject.borderColor}`}
+              className={`bg-surface-container-low p-5 md:p-6 rounded-xl shadow-sm hover:shadow-md transition-all group border-b-4 ${subject.borderColor}`}
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-lg md:text-xl font-headline font-extrabold text-primary">
@@ -120,7 +120,7 @@ export default function ProgressPage() {
         </div>
 
         {/* Weekly Bar Chart */}
-        <div className="col-span-12 lg:col-span-4 bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-sm border-t-8 border-primary">
+        <div className="col-span-12 lg:col-span-4 bg-surface-container-low p-6 md:p-8 rounded-xl shadow-sm border-t-8 border-primary">
           <h3 className="text-lg md:text-xl font-headline font-black text-primary mb-6 md:mb-8">
             সাপ্তাহিক সময় ব্যয়
           </h3>
@@ -163,7 +163,7 @@ export default function ProgressPage() {
         </div>
 
         {/* Weakest Subject */}
-        <div className="col-span-12 bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-sm overflow-hidden relative">
+        <div className="col-span-12 bg-surface-container-low p-6 md:p-8 rounded-xl shadow-sm overflow-hidden relative">
           <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 pointer-events-none">
             <span
               className="material-symbols-outlined"

@@ -57,7 +57,7 @@ export default function LandingPage() {
     <div className="bg-surface font-body text-on-surface antialiased overflow-x-hidden transition-colors">
 
       {/* ─── NAVBAR ─── */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-16 bg-surface-container-lowest/90 dark:bg-[#01160D] backdrop-blur-md shadow-sm border-b border-outline-variant/20 dark:border-green-900/30">
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
             <span className="material-symbols-outlined fill-icon text-on-primary" style={{ fontSize: '18px' }}>school</span>
@@ -86,11 +86,11 @@ export default function LandingPage() {
       <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
         {/* Background layers */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary-fixed/20 to-transparent" />
-          <div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-primary-fixed-dim/15 blur-[120px] rounded-full" />
-          <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-tertiary-fixed-dim/10 blur-[100px] rounded-full" />
-          {/* Grid pattern */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #004900 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary-fixed/20 dark:from-primary/10 to-transparent" />
+          <div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-primary-fixed-dim/15 dark:bg-primary/10 blur-[120px] rounded-full" />
+          <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-tertiary-fixed-dim/10 dark:bg-primary/5 blur-[100px] rounded-full" />
+          {/* Grid pattern — uses brand green in both modes */}
+          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, #82db6f 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12 md:py-20">
@@ -464,20 +464,20 @@ export default function LandingPage() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="bg-inverse-surface py-10">
+      <footer className="bg-surface-container-lowest dark:bg-[#01160D] border-t border-outline-variant/20 dark:border-green-900/20 py-10">
         <div className="max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined fill-icon text-on-primary-fixed" style={{ fontSize: '16px' }}>school</span>
+            <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
+              <span className="material-symbols-outlined fill-icon text-on-primary" style={{ fontSize: '16px' }}>school</span>
             </div>
-            <span className="text-lg font-black text-inverse-on-surface tracking-tight font-headline">BanglaQuest</span>
+            <span className="text-lg font-black text-on-surface tracking-tight font-headline">BanglaQuest</span>
           </div>
-          <div className="flex gap-6 text-inverse-on-surface/60 text-xs font-label tracking-widest uppercase">
-            <a href="#" className="hover:text-inverse-on-surface transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-inverse-on-surface transition-colors">Parent Guide</a>
-            <a href="#" className="hover:text-inverse-on-surface transition-colors">Support</a>
+          <div className="flex gap-6 text-on-surface-variant text-xs font-label tracking-widest uppercase">
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Parent Guide</a>
+            <a href="#" className="hover:text-primary transition-colors">Support</a>
           </div>
-          <p className="text-inverse-on-surface/40 text-xs font-label tracking-wider">
+          <p className="text-on-surface-variant/50 text-xs font-label tracking-wider">
             © 2024 BanglaQuest Education Foundation
           </p>
         </div>

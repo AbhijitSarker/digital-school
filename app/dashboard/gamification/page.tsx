@@ -6,7 +6,7 @@ const badges = [
   { icon: "auto_awesome", name: "নতুন যোদ্ধা", color: "text-tertiary", tooltip: "প্রথম ৩টি কুইজ সম্পন্ন করে অর্জিত", locked: false },
   { icon: "bolt", name: "বিদ্যুৎ গতি", color: "text-secondary", tooltip: "৫ মিনিটে কুইজ শেষ করে অর্জিত", locked: false },
   { icon: "book", name: "পুঁথি পাঠক", color: "text-primary", tooltip: "১০টি পাঠ সম্পূর্ণ করে অর্জিত", locked: false },
-  { icon: "military_tech", name: "সপ্তাহের সেরা", color: "text-amber-500", tooltip: "গত সপ্তাহে সর্বোচ্চ স্কোর করে অর্জিত", locked: false },
+  { icon: "military_tech", name: "সপ্তাহের সেরা", color: "text-tertiary-fixed-dim", tooltip: "গত সপ্তাহে সর্বোচ্চ স্কোর করে অর্জিত", locked: false },
   { icon: "history_edu", name: "ব্যাকরণ বিদ", color: "text-primary-fixed-dim", tooltip: "ব্যাকরণ কুইজে ১০০% সঠিক উত্তর দিয়ে অর্জিত", locked: false },
   { icon: "lock", name: "অভিযাত্রী", color: "text-outline", tooltip: "এখনও অর্জিত হয়নি", locked: true },
   { icon: "lock", name: "ভাষা সৈনিক", color: "text-outline", tooltip: "৯৫% এ পৌঁছান", locked: true },
@@ -117,9 +117,9 @@ export default function GamificationPage() {
           {/* Mini Stats */}
           <div className="grid grid-cols-3 gap-3 md:gap-4">
             {[
-              { icon: "menu_book", val: "১৫", label: "বই শেষ", bg: "bg-primary-fixed/15", ic: "text-emerald-700", vc: "text-on-surface" },
+              { icon: "menu_book", val: "১৫", label: "বই শেষ", bg: "bg-primary-fixed/15", ic: "text-primary", vc: "text-on-surface" },
               { icon: "star", val: "১২০", label: "অর্জিত স্টার", bg: "bg-orange-50", ic: "text-orange-700", vc: "text-orange-900" },
-              { icon: "emoji_events", val: "৮", label: "ব্যাজ অর্জন", bg: "bg-purple-50", ic: "text-purple-700", vc: "text-purple-900" },
+              { icon: "emoji_events", val: "৮", label: "ব্যাজ অর্জন", bg: "bg-surface-container-high", ic: "text-tertiary", vc: "text-on-surface" },
             ].map((stat) => (
               <div key={stat.label} className={`p-3 md:p-4 ${stat.bg} rounded-2xl flex flex-col items-center justify-center text-center`}>
                 <span className={`material-symbols-outlined fill-icon mb-1.5 ${stat.ic}`} style={{ fontSize: "22px" }}>
@@ -205,7 +205,7 @@ export default function GamificationPage() {
               আজকের ৩টি কুইজ সম্পন্ন করলে পাবেন অতিরিক্ত ১০০ XP।
             </p>
             <div className="flex justify-between items-center bg-surface-container p-3 rounded-xl">
-              <span className="text-xs font-bold text-emerald-800">১ / ৩ সম্পন্ন</span>
+              <span className="text-xs font-bold text-on-surface">১ / ৩ সম্পন্ন</span>
               <div className="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
                 <div className="bg-secondary h-full w-1/3" />
               </div>

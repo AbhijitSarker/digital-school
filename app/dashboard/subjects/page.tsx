@@ -96,7 +96,7 @@ export default function SubjectsPage() {
             </div>
             <Link
               href="/learn"
-              className="flex items-center gap-2 bg-surface-container-lowest text-primary px-4 py-2 rounded-2xl text-sm font-bold hover:bg-white/90 transition-all"
+              className="flex items-center gap-2 bg-surface-container-lowest text-primary px-4 py-2 rounded-2xl text-sm font-bold hover:bg-surface-container-high transition-all"
             >
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>play_arrow</span>
               <span className="font-label">পাঠ শুরু করুন</span>
@@ -119,7 +119,7 @@ export default function SubjectsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6">
         {/* Chapters List */}
         <div className="lg:col-span-8 space-y-5 md:space-y-6">
-          <div className="bg-surface-container-lowest rounded-3xl p-5 md:p-6 shadow-sm border border-outline-variant/10">
+          <div className="bg-surface-container-low rounded-3xl p-5 md:p-6 shadow-sm border border-outline-variant/10">
             <div className="flex justify-between items-center mb-6 md:mb-8">
               <h2 className="text-lg md:text-xl font-extrabold text-primary font-headline tracking-tight">
                 অধ্যায়ভিত্তিক অগ্রগতি

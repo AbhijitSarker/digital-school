@@ -98,7 +98,7 @@ export default function QuizHistoryPage() {
 
       {/* Latest Quiz Expanded */}
       <section className="mb-10 md:mb-12">
-        <div className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm flex flex-col lg:flex-row">
+        <div className="bg-surface-container-low rounded-3xl overflow-hidden shadow-sm flex flex-col lg:flex-row">
           {/* Left: Score side */}
           <div className="lg:w-1/3 bg-primary p-6 md:p-8 text-on-primary">
             <div className="flex justify-between items-start mb-6 md:mb-8">
@@ -145,9 +145,9 @@ export default function QuizHistoryPage() {
               {latestQuizQs.map((q, i) => (
                 <div
                   key={i}
-                  className={`p-3 md:p-4 bg-surface-container rounded-2xl flex gap-3 md:gap-4 border-l-4 ${q.correct ? "border-emerald-500" : "border-secondary"}`}
+                  className={`p-3 md:p-4 bg-surface-container rounded-2xl flex gap-3 md:gap-4 border-l-4 ${q.correct ? "border-outline-variant/200" : "border-secondary"}`}
                 >
-                  <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 ${q.correct ? "bg-primary-fixed/30 text-primary" : "bg-red-100 text-secondary"}`}>
+                  <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 ${q.correct ? "bg-primary-fixed/30 text-primary" : "bg-secondary/20 text-secondary"}`}>
                     <span className="material-symbols-outlined fill-icon" style={{ fontSize: "16px" }}>
                       {q.correct ? "check" : "close"}
                     </span>
@@ -170,7 +170,7 @@ export default function QuizHistoryPage() {
       </section>
 
       {/* Quiz History Table */}
-      <section className="bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
+      <section className="bg-surface-container-low rounded-3xl shadow-sm overflow-hidden">
         <div className="px-5 md:px-8 py-5 md:py-6 border-b border-surface-container-low flex items-center justify-between">
           <h3 className="text-base md:text-lg font-bold font-headline text-on-surface">
             সাম্প্রতিক কুইজ তালিকা

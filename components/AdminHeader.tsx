@@ -12,7 +12,7 @@ export default function AdminHeader({ title, breadcrumb, actions }: AdminHeaderP
   const onMenuToggle = useAdminMenu();
 
   return (
-    <header className="bg-surface-container-lowest/90 backdrop-blur-xl w-full h-16 sticky top-0 z-40 shadow-sm border-b border-outline-variant/20 flex items-center gap-3 px-4 md:px-6">
+    <header className="bg-surface-container-lowest/90 dark:bg-[#01160D] backdrop-blur-xl w-full h-16 sticky top-0 z-40 shadow-sm border-b border-outline-variant/20 dark:border-green-900/30 flex items-center gap-3 px-4 md:px-6">
       {/* Hamburger — mobile only */}
       <button
         onClick={onMenuToggle}

@@ -17,7 +17,7 @@ export default function DashboardPage() {
       {/* Stats Bento Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-10">
         {/* XP Card */}
-        <div className="bg-surface-container-lowest p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-emerald-50/80">
+        <div className="bg-surface-container-low p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
           <div className="flex justify-between items-start mb-3 md:mb-4">
             <div className="bg-tertiary-fixed p-2 rounded-xl">
               <span
@@ -42,7 +42,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Streak Card */}
-        <div className="bg-surface-container-lowest p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-emerald-50/80">
+        <div className="bg-surface-container-low p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
           <div className="flex justify-between items-start mb-3 md:mb-4">
             <div className="bg-secondary-fixed p-2 rounded-xl">
               <span
@@ -64,7 +64,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Progress Ring Card */}
-        <div className="bg-surface-container-lowest p-4 md:p-6 rounded-3xl shadow-sm flex items-center justify-between border border-emerald-50/80 col-span-2 md:col-span-1">
+        <div className="bg-surface-container-low p-4 md:p-6 rounded-3xl shadow-sm flex items-center justify-between border border-outline-variant/20 col-span-2 md:col-span-1">
           <CircularProgress percentage={78} size={72} />
           <div className="text-right">
             <p className="text-on-surface-variant text-xs md:text-sm font-medium mb-1">
@@ -75,7 +75,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Avg Quiz Score */}
-        <div className="bg-surface-container-lowest p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-emerald-50/80 col-span-2 md:col-span-1">
+        <div className="bg-surface-container-low p-4 md:p-6 rounded-3xl shadow-sm flex flex-col justify-between border border-outline-variant/20 col-span-2 md:col-span-1">
           <div className="flex justify-between items-start mb-3 md:mb-4">
             <div className="bg-primary-fixed p-2 rounded-xl">
               <span
@@ -100,7 +100,7 @@ export default function DashboardPage() {
       {/* Content Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
         {/* Activity Feed */}
-        <div className="lg:col-span-2 bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm border border-emerald-50/80">
+        <div className="lg:col-span-2 bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm border border-outline-variant/20">
           <div className="flex justify-between items-center mb-6 md:mb-8">
             <h3 className="text-lg md:text-xl font-bold text-primary font-headline">
               আজকের কার্যক্রম

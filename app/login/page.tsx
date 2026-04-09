@@ -38,7 +38,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-surface-dim flex flex-col transition-colors">
       {/* Top Nav */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface-container-lowest/90 dark:bg-[#01160D] backdrop-blur-md shadow-sm border-b border-outline-variant/20 dark:border-green-900/30">
         <Link href="/" className="text-2xl font-black text-primary tracking-tight font-headline">
           BanglaQuest
         </Link>

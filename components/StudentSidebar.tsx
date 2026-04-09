@@ -20,7 +20,7 @@ export default function StudentSidebar() {
   };
 
   return (
-    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/20 py-6 gap-2 z-40">
+    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-[#01160D] border-r border-outline-variant/20 dark:border-green-900/30 py-6 gap-2 z-40">
       <div className="px-6 mb-6">
         <h1 className="text-xl font-extrabold text-primary font-headline tracking-tight">বাংলাকুয়েস্ট</h1>
         <p className="text-sm font-semibold text-on-surface-variant opacity-70">শ্রেণী ৭</p>

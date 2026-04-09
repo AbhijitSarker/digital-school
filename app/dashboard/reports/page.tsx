@@ -42,7 +42,7 @@ export default function ReportsPage() {
           { label: "গড় সেশন দৈর্ঘ্য", value: "২৩ মিনিট", icon: "timer", sub: "প্রতিদিন" },
           { label: "মোট XP অর্জন", value: "৫৪২০", icon: "stars", sub: "সর্বকালীন" },
         ].map((card) => (
-          <div key={card.label} className="bg-surface-container-lowest p-4 md:p-5 rounded-2xl shadow-sm border border-emerald-50">
+          <div key={card.label} className="bg-surface-container-low p-4 md:p-5 rounded-2xl shadow-sm border border-outline-variant/20">
             <span className="material-symbols-outlined text-primary fill-icon" style={{ fontSize: "22px" }}>
               {card.icon}
             </span>
@@ -75,7 +75,7 @@ export default function ReportsPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Monthly Progress Chart */}
-        <div className="lg:col-span-2 bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm">
+        <div className="lg:col-span-2 bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm">
           <h3 className="font-headline font-bold text-xl text-primary mb-6">মাসিক গড় স্কোর</h3>
           <div className="space-y-4">
             {monthlyScores.map((m) => (
@@ -115,7 +115,7 @@ export default function ReportsPage() {
 
         {/* Recommendations */}
         <div className="space-y-4">
-          <div className="bg-surface-container-lowest rounded-3xl p-5 md:p-6 shadow-sm">
+          <div className="bg-surface-container-low rounded-3xl p-5 md:p-6 shadow-sm">
             <h3 className="font-headline font-bold text-base text-primary mb-4">অভিভাবক সুপারিশ</h3>
             <div className="space-y-4">
               {[

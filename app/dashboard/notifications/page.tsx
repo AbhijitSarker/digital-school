@@ -47,7 +47,7 @@ const notifications = [
     id: 5,
     type: "milestone",
     icon: "military_tech",
-    color: "bg-amber-100 text-amber-700",
+    color: "bg-tertiary-fixed/30 text-tertiary",
     title: "লেভেল আপ আসন্ন!",
     body: "তানভীর লেভেল ১৩ অর্জন থেকে মাত্র ৮০০ XP দূরে। আর একটু চেষ্টাই লাগবে!",
     time: "৩ দিন আগে",
@@ -133,7 +133,7 @@ export default function NotificationsPage() {
       </div>
 
       {/* Notification Settings */}
-      <div className="bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm">
+      <div className="bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm">
         <h3 className="font-headline font-bold text-lg text-primary mb-6">বিজ্ঞপ্তি সেটিংস</h3>
         <div className="space-y-4">
           {([

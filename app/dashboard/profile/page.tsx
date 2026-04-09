@@ -77,7 +77,7 @@ export default function ProfilePage() {
       {activeTab === "profile" && (
         <div className="space-y-6">
           {/* Parent Info */}
-          <div className="bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm">
+          <div className="bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm">
             <h3 className="font-headline font-bold text-lg text-primary mb-6">অভিভাবকের তথ্য</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {[
@@ -107,7 +107,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Child Info */}
-          <div className="bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm">
+          <div className="bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-headline font-bold text-lg text-primary">সন্তানের তথ্য</h3>
               <button className="flex items-center gap-2 text-sm font-bold text-primary hover:underline">
@@ -159,7 +159,7 @@ export default function ProfilePage() {
             <button
               onClick={handleSave}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-label font-bold text-sm uppercase tracking-widest transition-all ${
-                saved ? "bg-emerald-500 text-white" : "bg-primary text-on-primary hover:bg-primary-container"
+                saved ? "bg-primary text-on-primary" : "bg-primary text-on-primary hover:bg-primary-container"
               }`}
             >
               {saved ? (
@@ -179,7 +179,7 @@ export default function ProfilePage() {
       )}
 
       {activeTab === "account" && (
-        <div className="bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm space-y-5">
+        <div className="bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm space-y-5">
           <h3 className="font-headline font-bold text-lg text-primary mb-6">অ্যাকাউন্ট সেটিংস</h3>
           {[
             { icon: "lock", label: "পাসওয়ার্ড পরিবর্তন", desc: "আপনার অ্যাকাউন্টের পাসওয়ার্ড আপডেট করুন" },
@@ -211,7 +211,7 @@ export default function ProfilePage() {
       )}
 
       {activeTab === "privacy" && (
-        <div className="bg-surface-container-lowest rounded-3xl p-6 md:p-8 shadow-sm">
+        <div className="bg-surface-container-low rounded-3xl p-6 md:p-8 shadow-sm">
           <h3 className="font-headline font-bold text-lg text-primary mb-6">গোপনীয়তা সেটিংস</h3>
           <div className="space-y-4">
             {[

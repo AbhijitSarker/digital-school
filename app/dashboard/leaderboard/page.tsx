@@ -5,13 +5,13 @@ import { useState } from "react";
 type Period = "week" | "month" | "all";
 
 const leaders = [
-  { rank: 1, name: "Nafisa Islam", school: "বাউনিয়া সরকারি প্রাথমিক বিদ্যালয়", xp: 8200, avatar: "NI", color: "bg-amber-100 text-amber-800", badge: "🥇" },
+  { rank: 1, name: "Nafisa Islam", school: "বাউনিয়া সরকারি প্রাথমিক বিদ্যালয়", xp: 8200, avatar: "NI", color: "bg-tertiary-fixed/30 text-on-surface", badge: "🥇" },
   { rank: 2, name: "Tanvir Ahmed", school: "রহমতপুর সরকারি প্রাথমিক বিদ্যালয়", xp: 7950, avatar: "TA", color: "bg-primary-fixed/30 text-on-primary-fixed", badge: "🥈", isUser: true },
-  { rank: 3, name: "Riya Das", school: "ধানমন্ডি সরকারি প্রাথমিক বিদ্যালয়", xp: 7680, avatar: "RD", color: "bg-blue-100 text-blue-800", badge: "🥉" },
-  { rank: 4, name: "Arham Chowdhury", school: "গুলশান সরকারি প্রাথমিক বিদ্যালয়", xp: 6540, avatar: "AC", color: "bg-purple-100 text-purple-800", badge: null },
+  { rank: 3, name: "Riya Das", school: "ধানমন্ডি সরকারি প্রাথমিক বিদ্যালয়", xp: 7680, avatar: "RD", color: "bg-primary-fixed/20 text-on-surface", badge: "🥉" },
+  { rank: 4, name: "Arham Chowdhury", school: "গুলশান সরকারি প্রাথমিক বিদ্যালয়", xp: 6540, avatar: "AC", color: "bg-surface-container-high text-on-surface", badge: null },
   { rank: 5, name: "Priya Barua", school: "মিরপুর সরকারি প্রাথমিক বিদ্যালয়", xp: 5900, avatar: "PB", color: "bg-pink-100 text-pink-800", badge: null },
-  { rank: 6, name: "Shakib Rahman", school: "উত্তরা সরকারি প্রাথমিক বিদ্যালয়", xp: 5420, avatar: "SR", color: "bg-indigo-100 text-indigo-800", badge: null },
-  { rank: 7, name: "Meghna Akter", school: "বনানী সরকারি প্রাথমিক বিদ্যালয়", xp: 4980, avatar: "MA", color: "bg-rose-100 text-rose-800", badge: null },
+  { rank: 6, name: "Shakib Rahman", school: "উত্তরা সরকারি প্রাথমিক বিদ্যালয়", xp: 5420, avatar: "SR", color: "bg-surface-container-high text-on-surface", badge: null },
+  { rank: 7, name: "Meghna Akter", school: "বনানী সরকারি প্রাথমিক বিদ্যালয়", xp: 4980, avatar: "MA", color: "bg-secondary/15 text-on-surface", badge: null },
 ];
 
 const subjects = ["সকল বিষয়", "বাংলা", "গণিত", "ইংরেজি", "বিজ্ঞান"];
@@ -111,7 +111,7 @@ export default function LeaderboardPage() {
       </div>
 
       {/* Full Rankings Table */}
-      <div className="bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
+      <div className="bg-surface-container-low rounded-3xl shadow-sm overflow-hidden">
         <div className="px-5 md:px-8 py-4 md:py-5 border-b border-surface-container-low flex items-center justify-between">
           <h3 className="font-headline font-bold text-on-surface">সম্পূর্ণ র‍্যাংকিং</h3>
           <span className="text-xs font-label text-outline">{period === "week" ? "এই সপ্তাহ" : period === "month" ? "এই মাস" : "সর্বকালীন"}</span>

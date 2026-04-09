@@ -22,7 +22,7 @@ export default function StudentNav() {
   return (
     <>
       {/* Desktop Top Nav */}
-      <header className="flex justify-between items-center w-full px-6 py-3 sticky top-0 z-50 bg-emerald-950/95 backdrop-blur-md shadow-sm">
+      <header className="flex justify-between items-center w-full px-6 py-3 sticky top-0 z-50 bg-emerald-950 dark:bg-[#01160D] backdrop-blur-md shadow-sm border-b border-green-900/30">
         <div className="flex items-center gap-4">
           <Link href="/learn" className="text-2xl font-black tracking-tight text-white font-headline">
             BanglaQuest
@@ -48,7 +48,7 @@ export default function StudentNav() {
       </header>
 
       {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-lowest/95 backdrop-blur-md flex justify-around items-center py-3 px-4 z-50 border-t border-outline-variant/20 shadow-lg">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-lowest/95 dark:bg-[#01160D] backdrop-blur-md flex justify-around items-center py-3 px-4 z-50 border-t border-outline-variant/20 dark:border-green-900/30 shadow-lg">
         {navItems.map((item) => (
           <Link
             key={item.href}
