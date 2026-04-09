@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const subjects = [
   {
@@ -93,6 +94,13 @@ export default function SubjectsPage() {
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>verified</span>
               <span className="font-label">সম্পূর্ণ: {activeSubject.pct}%</span>
             </div>
+            <Link
+              href="/learn"
+              className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-2xl text-sm font-bold hover:bg-white/90 transition-all"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>play_arrow</span>
+              <span className="font-label">পাঠ শুরু করুন</span>
+            </Link>
           </div>
         </div>
         <div className="relative w-36 h-36 md:w-56 md:h-56 flex items-center justify-center shrink-0">
