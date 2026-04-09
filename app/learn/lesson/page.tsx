@@ -73,7 +73,7 @@ export default function AnimatedLessonPage() {
                 className={`flex items-center gap-3 py-3 cursor-pointer transition-all ${
                   item.active
                     ? 'text-primary font-bold border-l-4 border-secondary pl-4 bg-primary-fixed-dim/10'
-                    : 'text-slate-600 pl-5 hover:bg-slate-200/50'
+                    : 'text-on-surface-variant pl-5 hover:bg-surface-container/50'
                 }`}
               >
                 <span className={`material-symbols-outlined ${item.active ? 'fill-icon' : ''}`}>{item.icon}</span>
@@ -222,7 +222,7 @@ export default function AnimatedLessonPage() {
                   </span>
                   <button
                     onClick={() => setIsNarrating(!isNarrating)}
-                    className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all"
+                    className="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all"
                   >
                     <span className="material-symbols-outlined fill-icon">{isNarrating ? 'pause' : 'play_arrow'}</span>
                   </button>
@@ -233,7 +233,7 @@ export default function AnimatedLessonPage() {
               </div>
 
               {/* Mini Challenge */}
-              <div className="md:col-span-12 bg-white rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/20 shadow-sm">
+              <div className="md:col-span-12 bg-surface-container-lowest rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/20 shadow-sm">
                 <div className="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden bg-surface-container-low flex items-center justify-center relative">
                   <div className="text-center p-6">
                     <div className="text-6xl font-black text-primary font-headline">১/৩</div>

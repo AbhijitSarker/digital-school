@@ -12,7 +12,7 @@ const quizzes = [
 ];
 
 const difficultyColor: Record<string, string> = {
-  'সহজ': 'bg-emerald-100 text-emerald-700',
+  'সহজ': 'bg-primary-fixed/30 text-primary',
   'মাঝারি': 'bg-tertiary-fixed/50 text-on-tertiary-fixed-variant',
   'কঠিন': 'bg-secondary-fixed/50 text-on-secondary-fixed-variant',
 };
@@ -50,7 +50,7 @@ export default function QuizBankPage() {
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট কুইজ', value: '৩৮৬', icon: 'quiz', color: 'text-primary' },
-            { label: 'সক্রিয়', value: '২৮৮', icon: 'play_circle', color: 'text-emerald-600' },
+            { label: 'সক্রিয়', value: '২৮৮', icon: 'play_circle', color: 'text-primary' },
             { label: 'ড্রাফট', value: '৯৮', icon: 'edit_note', color: 'text-outline' },
             { label: 'মোট প্রশ্ন', value: '৫,৪৪০', icon: 'help', color: 'text-tertiary' },
           ].map((c) => (
@@ -119,7 +119,7 @@ export default function QuizBankPage() {
                     <td className="px-3 py-4 text-on-surface-variant font-label">{q.attempts}</td>
                     <td className="px-3 py-4 font-bold text-primary font-label">{q.avgScore}</td>
                     <td className="px-3 py-4">
-                      <span className={`text-[11px] font-label font-bold px-2 py-1 rounded-full ${q.status === 'active' ? 'bg-emerald-100 text-emerald-700' : 'bg-surface-container-high text-on-surface-variant'}`}>
+                      <span className={`text-[11px] font-label font-bold px-2 py-1 rounded-full ${q.status === 'active' ? 'bg-primary-fixed/30 text-primary' : 'bg-surface-container-high text-on-surface-variant'}`}>
                         {q.status === 'active' ? 'সক্রিয়' : 'ড্রাফট'}
                       </span>
                     </td>

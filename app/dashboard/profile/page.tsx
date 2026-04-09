@@ -38,18 +38,18 @@ export default function ProfilePage() {
             <h2 className="text-2xl md:text-3xl font-black font-headline mb-1">{parentName}</h2>
             <p className="text-primary-fixed-dim text-sm">অভিভাবক অ্যাকাউন্ট</p>
             <div className="flex flex-wrap justify-center sm:justify-start gap-3 mt-4">
-              <div className="flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full text-sm">
+              <div className="flex items-center gap-2 bg-surface-container-low/50 px-3 py-1.5 rounded-full text-sm">
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>email</span>
                 {parentEmail}
               </div>
-              <div className="flex items-center gap-2 bg-white/20 px-3 py-1.5 rounded-full text-sm">
+              <div className="flex items-center gap-2 bg-surface-container-low/50 px-3 py-1.5 rounded-full text-sm">
                 <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>phone</span>
                 {parentPhone}
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-surface-container/20 rounded-full blur-2xl" />
       </div>
 
       {/* Tabs */}
@@ -64,7 +64,7 @@ export default function ProfilePage() {
             onClick={() => setActiveTab(tab.key as typeof activeTab)}
             className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${
               activeTab === tab.key
-                ? "bg-white text-primary shadow-sm"
+                ? "bg-surface-container-lowest text-primary shadow-sm"
                 : "text-on-surface-variant hover:text-on-surface"
             }`}
           >
@@ -115,15 +115,15 @@ export default function ProfilePage() {
                 সন্তান যোগ করুন
               </button>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-emerald-50 rounded-2xl mb-5">
+            <div className="flex items-center gap-4 p-4 bg-surface-container-low rounded-2xl mb-5">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ4HfnnTD3oOQzKgyBT-5hc5eYQLnh-ngU8WkGLk1ICYsdqTIefBRjYMrYUyqr-nKKbfVr9WaV9irUf30-0tEdOzwgVwWpgsaS8q9uPssR-QSgScEiO1YOODluaWxeFbEiMgeKkshvp1i8jTc19W-HLnRy_YV7JCoyxuHQcawErnCJXDZ5rqLdK2NvCs7UwQQrvzs-D7jaQ_4RFZ1nOMVNtJS7jbSD3yIdW5FxTlZZMTqyBmS4fu_Y0U5Bn-DiATr3euwbMVf_UEwq"
                 alt="Child"
                 className="w-12 h-12 rounded-full border-2 border-white shadow-sm"
               />
               <div className="flex-1">
-                <p className="font-bold text-emerald-900">{childName}</p>
-                <p className="text-xs text-emerald-800/70">{childClass} • লেভেল ১২</p>
+                <p className="font-bold text-on-surface">{childName}</p>
+                <p className="text-xs text-on-surface-variant">{childClass} • লেভেল ১২</p>
               </div>
               <div className="flex gap-1">
                 <span className="px-2 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold font-label">সক্রিয়</span>
@@ -248,7 +248,7 @@ function ToggleSwitch({ defaultOn }: { defaultOn: boolean }) {
       onClick={() => setOn(!on)}
       className={`relative w-12 h-6 rounded-full transition-colors ${on ? "bg-primary" : "bg-outline-variant"}`}
     >
-      <div className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${on ? "translate-x-7" : "translate-x-1"}`} />
+      <div className={`absolute top-1 w-4 h-4 bg-surface-container-lowest rounded-full shadow border border-outline-variant/10 transition-transform ${on ? "translate-x-7" : "translate-x-1"}`} />
     </button>
   );
 }

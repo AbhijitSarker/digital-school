@@ -13,7 +13,7 @@ const subjects = [
     pct: 65,
     abstract: "∑ ∫ π",
     chapters: [
-      { name: "গুণ (Multiplication)", chapter: "৩", lessons: "১২", time: "৩ ঘণ্টা ২০ মিনিট", score: "৯২%", scoreColor: "text-emerald-600", progress: 85, icon: "close" },
+      { name: "গুণ (Multiplication)", chapter: "৩", lessons: "১২", time: "৩ ঘণ্টা ২০ মিনিট", score: "৯২%", scoreColor: "text-primary", progress: 85, icon: "close" },
       { name: "ভাগ (Division)", chapter: "৪", lessons: "১৫", time: "৪ ঘণ্টা ১৫ মিনিট", score: "৬৮%", scoreColor: "text-secondary", progress: 52, icon: "percent" },
       { name: "ভগ্নাংশ (Fractions)", chapter: "৮", lessons: "১০", time: "১ ঘণ্টা ১০ মিনিট", score: "--", scoreColor: "text-on-surface-variant", progress: 12, icon: "pie_chart" },
     ],
@@ -27,9 +27,9 @@ const subjects = [
     pct: 92,
     abstract: "অ আ ক খ",
     chapters: [
-      { name: "স্বরবর্ণ", chapter: "১", lessons: "৮", time: "২ ঘণ্টা", score: "৯৮%", scoreColor: "text-emerald-600", progress: 98, icon: "abc" },
-      { name: "ব্যঞ্জনবর্ণ", chapter: "২", lessons: "১২", time: "৩ ঘণ্টা ৪০ মিনিট", score: "৯৫%", scoreColor: "text-emerald-600", progress: 95, icon: "spellcheck" },
-      { name: "যুক্তবর্ণ", chapter: "৩", lessons: "১০", time: "২ ঘণ্টা ৩০ মিনিট", score: "৮৫%", scoreColor: "text-emerald-600", progress: 85, icon: "format_shapes" },
+      { name: "স্বরবর্ণ", chapter: "১", lessons: "৮", time: "২ ঘণ্টা", score: "৯৮%", scoreColor: "text-primary", progress: 98, icon: "abc" },
+      { name: "ব্যঞ্জনবর্ণ", chapter: "২", lessons: "১২", time: "৩ ঘণ্টা ৪০ মিনিট", score: "৯৫%", scoreColor: "text-primary", progress: 95, icon: "spellcheck" },
+      { name: "যুক্তবর্ণ", chapter: "৩", lessons: "১০", time: "২ ঘণ্টা ৩০ মিনিট", score: "৮৫%", scoreColor: "text-primary", progress: 85, icon: "format_shapes" },
     ],
   },
   {
@@ -41,7 +41,7 @@ const subjects = [
     pct: 68,
     abstract: "A B C D",
     chapters: [
-      { name: "Grammar Basics", chapter: "১", lessons: "৮", time: "২ ঘণ্টা ১০ মিনিট", score: "৭৫%", scoreColor: "text-emerald-600", progress: 75, icon: "format_quote" },
+      { name: "Grammar Basics", chapter: "১", lessons: "৮", time: "২ ঘণ্টা ১০ মিনিট", score: "৭৫%", scoreColor: "text-primary", progress: 75, icon: "format_quote" },
       { name: "Vocabulary", chapter: "২", lessons: "১৫", time: "৩ ঘণ্টা", score: "৬০%", scoreColor: "text-secondary", progress: 60, icon: "library_books" },
       { name: "Reading Comprehension", chapter: "৩", lessons: "৬", time: "১ ঘণ্টা", score: "--", scoreColor: "text-on-surface-variant", progress: 20, icon: "chrome_reader_mode" },
     ],
@@ -78,7 +78,7 @@ export default function SubjectsPage() {
         className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${activeSubject.color} p-6 md:p-8 mb-6 md:mb-8 text-white shadow-xl flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8`}
       >
         <div className="relative z-10 space-y-3 md:space-y-4 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low/50 backdrop-blur-md rounded-full text-sm font-medium">
             <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>school</span>
             <span>চতুর্থ শ্রেণী</span>
           </div>
@@ -86,17 +86,17 @@ export default function SubjectsPage() {
             {activeSubject.name} ({activeSubject.subtitle})
           </h1>
           <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 pt-2">
-            <div className="flex items-center gap-2 bg-white/10 px-3 md:px-4 py-2 rounded-2xl text-sm">
+            <div className="flex items-center gap-2 bg-surface-container/30 px-3 md:px-4 py-2 rounded-2xl text-sm">
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>schedule</span>
               <span className="font-label">মোট সময়: ১৮ ঘণ্টা</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3 md:px-4 py-2 rounded-2xl text-sm">
+            <div className="flex items-center gap-2 bg-surface-container/30 px-3 md:px-4 py-2 rounded-2xl text-sm">
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>verified</span>
               <span className="font-label">সম্পূর্ণ: {activeSubject.pct}%</span>
             </div>
             <Link
               href="/learn"
-              className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-2xl text-sm font-bold hover:bg-white/90 transition-all"
+              className="flex items-center gap-2 bg-surface-container-lowest text-primary px-4 py-2 rounded-2xl text-sm font-bold hover:bg-white/90 transition-all"
             >
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>play_arrow</span>
               <span className="font-label">পাঠ শুরু করুন</span>
@@ -139,7 +139,7 @@ export default function SubjectsPage() {
                 >
                   <div className="flex flex-col sm:flex-row justify-between gap-3 md:gap-4">
                     <div className="flex gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform shrink-0">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-110 transition-transform shrink-0">
                         <span className="material-symbols-outlined" style={{ fontSize: "22px" }}>
                           {ch.icon}
                         </span>
@@ -194,7 +194,7 @@ export default function SubjectsPage() {
               {[
                 { skill: "যৌক্তিক চিন্তা", val: 80, color: "bg-primary" },
                 { skill: "হিসাব করার গতি", val: 60, color: "bg-secondary" },
-                { skill: "সঠিকতা", val: 90, color: "bg-emerald-600" },
+                { skill: "সঠিকতা", val: 90, color: "bg-primary" },
               ].map((s) => (
                 <div key={s.skill}>
                   <div className="flex justify-between mb-1">
@@ -203,7 +203,7 @@ export default function SubjectsPage() {
                       {s.val}/১০০
                     </span>
                   </div>
-                  <div className="h-2 bg-white rounded-full overflow-hidden">
+                  <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full ${s.color}`}
                       style={{ width: `${s.val}%` }}

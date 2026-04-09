@@ -4,8 +4,8 @@ import AdminHeader from '@/components/AdminHeader';
 import Link from 'next/link';
 
 const metrics = [
-  { label: 'মোট সক্রিয় শিক্ষার্থী', value: '১২,৪৫০', delta: '+৮.৪% এই মাসে', deltaColor: 'bg-emerald-100 text-emerald-700', icon: 'groups', iconColor: 'text-primary', iconBg: 'bg-primary/10', border: 'border-primary' },
-  { label: 'আজকের DAU', value: '৩,৮২০', delta: '+১২% আজ', deltaColor: 'bg-emerald-100 text-emerald-700', icon: 'ads_click', iconColor: 'text-primary-container', iconBg: 'bg-primary-container/10', border: 'border-primary-container' },
+  { label: 'মোট সক্রিয় শিক্ষার্থী', value: '১২,৪৫০', delta: '+৮.৪% এই মাসে', deltaColor: 'bg-primary-fixed/30 text-primary', icon: 'groups', iconColor: 'text-primary', iconBg: 'bg-primary/10', border: 'border-primary' },
+  { label: 'আজকের DAU', value: '৩,৮২০', delta: '+১২% আজ', deltaColor: 'bg-primary-fixed/30 text-primary', icon: 'ads_click', iconColor: 'text-primary-container', iconBg: 'bg-primary-container/10', border: 'border-primary-container' },
   { label: 'গড় কুইজ স্কোর', value: '৮৪%', delta: 'স্থির পারফরম্যান্স', deltaColor: 'bg-tertiary-fixed text-on-tertiary-fixed-variant', icon: 'analytics', iconColor: 'text-tertiary', iconBg: 'bg-tertiary-fixed/30', border: 'border-tertiary' },
   { label: 'মোট অর্জিত XP', value: '৮৫০K', delta: '+৪৫K গতকাল', deltaColor: 'bg-tertiary-fixed text-on-tertiary-fixed-variant', icon: 'stars', iconColor: 'text-tertiary-container', iconBg: 'bg-tertiary-container/10', border: 'border-tertiary-container' },
   { label: 'রিটেনশন রেট', value: '৬৪.২%', delta: 'উন্নত হচ্ছে', deltaColor: 'bg-secondary-fixed text-on-secondary-fixed-variant', icon: 'cached', iconColor: 'text-secondary', iconBg: 'bg-secondary-fixed/50', border: 'border-secondary' },
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
             <h2 className="text-3xl font-headline font-extrabold text-primary tracking-tight">শুভেচ্ছা, অ্যাডমিন প্যানেল</h2>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary-fixed/150 animate-pulse" />
             <span className="text-xs font-label font-bold text-outline uppercase tracking-widest">Server Status</span>
             <span className="text-sm font-semibold text-on-surface ml-1">অপারেশনাল</span>
           </div>
@@ -79,7 +79,7 @@ export default function AdminDashboard() {
                 <p className="text-sm text-outline">গত ৩০ দিনের ইউজার অ্যাক্টিভিটি</p>
               </div>
               <div className="flex bg-surface-container p-1 rounded-lg gap-1">
-                <button className="px-3 py-1 text-xs font-label font-bold bg-white text-primary rounded-md shadow-sm">সপ্তাহ</button>
+                <button className="px-3 py-1 text-xs font-label font-bold bg-surface-container-lowest text-primary rounded-md shadow-sm">সপ্তাহ</button>
                 <button className="px-3 py-1 text-xs font-label font-semibold text-outline hover:text-primary transition-colors">মাস</button>
               </div>
             </div>

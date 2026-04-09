@@ -20,7 +20,7 @@ export default function MobileNav() {
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl border-t border-outline-variant/20 flex justify-around items-center py-2 z-50">
+    <nav className="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest/95 backdrop-blur-xl border-t border-outline-variant/20 flex justify-around items-center py-2 z-50">
       {mobileItems.map((item) => (
         <Link
           key={item.href}
@@ -28,7 +28,7 @@ export default function MobileNav() {
           className={`flex flex-col items-center gap-0.5 p-2 min-w-0 transition-colors ${
             isActive(item.href)
               ? "text-primary"
-              : "text-emerald-800/60"
+              : "text-on-surface-variant"
           }`}
         >
           <span

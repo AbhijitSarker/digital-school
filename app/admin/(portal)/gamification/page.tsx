@@ -98,7 +98,7 @@ export default function GamificationPage() {
                   </div>
                   <div className="flex flex-col items-center gap-1">
                     <div className={`w-10 h-5 rounded-full transition-colors cursor-pointer ${b.active ? 'bg-primary' : 'bg-surface-container-high'} flex items-center ${b.active ? 'justify-end pr-0.5' : 'justify-start pl-0.5'}`}>
-                      <div className="w-4 h-4 rounded-full bg-white shadow-sm" />
+                      <div className="w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm" />
                     </div>
                     <span className="text-[9px] font-label text-outline">{b.active ? 'চালু' : 'বন্ধ'}</span>
                   </div>
@@ -122,7 +122,7 @@ export default function GamificationPage() {
                   </div>
                   <div className="text-right">
                     <p className="font-bold text-primary font-label text-sm">{l.xp}</p>
-                    <p className={`text-[10px] font-bold ${l.delta.includes('↑') ? 'text-emerald-600' : l.delta.includes('↓') ? 'text-error' : 'text-outline'}`}>{l.delta}</p>
+                    <p className={`text-[10px] font-bold ${l.delta.includes('↑') ? 'text-primary' : l.delta.includes('↓') ? 'text-error' : 'text-outline'}`}>{l.delta}</p>
                   </div>
                 </div>
               ))}

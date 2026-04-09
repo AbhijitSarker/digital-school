@@ -19,7 +19,7 @@ export default function SettingsPage() {
       onClick={onChange}
       className={`w-12 h-6 rounded-full transition-colors relative ${value ? 'bg-primary' : 'bg-surface-container-high'}`}
     >
-      <div className={`w-5 h-5 bg-white rounded-full absolute top-0.5 transition-all shadow-sm ${value ? 'right-0.5' : 'left-0.5'}`} />
+      <div className={`w-5 h-5 bg-surface-container-lowest rounded-full absolute top-0.5 transition-all shadow-sm ${value ? 'right-0.5' : 'left-0.5'}`} />
     </button>
   );
 

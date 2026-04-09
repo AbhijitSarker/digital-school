@@ -102,7 +102,7 @@ export default function QuizHistoryPage() {
           {/* Left: Score side */}
           <div className="lg:w-1/3 bg-primary p-6 md:p-8 text-on-primary">
             <div className="flex justify-between items-start mb-6 md:mb-8">
-              <span className="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+              <span className="bg-surface-container-low/50 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
                 সর্বশেষ কুইজ
               </span>
               <span className="material-symbols-outlined opacity-50" style={{ fontSize: "20px" }}>
@@ -147,7 +147,7 @@ export default function QuizHistoryPage() {
                   key={i}
                   className={`p-3 md:p-4 bg-surface-container rounded-2xl flex gap-3 md:gap-4 border-l-4 ${q.correct ? "border-emerald-500" : "border-secondary"}`}
                 >
-                  <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 ${q.correct ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-secondary"}`}>
+                  <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center shrink-0 ${q.correct ? "bg-primary-fixed/30 text-primary" : "bg-red-100 text-secondary"}`}>
                     <span className="material-symbols-outlined fill-icon" style={{ fontSize: "16px" }}>
                       {q.correct ? "check" : "close"}
                     </span>
@@ -161,7 +161,7 @@ export default function QuizHistoryPage() {
                 </div>
               ))}
             </div>
-            <button className="mt-6 md:mt-8 w-full py-3 bg-surface-container-high rounded-xl text-primary font-bold text-sm hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2">
+            <button className="mt-6 md:mt-8 w-full py-3 bg-surface-container-high rounded-xl text-primary font-bold text-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
               সকল ১০টি প্রশ্ন দেখুন
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_forward</span>
             </button>
@@ -172,7 +172,7 @@ export default function QuizHistoryPage() {
       {/* Quiz History Table */}
       <section className="bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
         <div className="px-5 md:px-8 py-5 md:py-6 border-b border-surface-container-low flex items-center justify-between">
-          <h3 className="text-base md:text-lg font-bold font-headline text-emerald-900">
+          <h3 className="text-base md:text-lg font-bold font-headline text-on-surface">
             সাম্প্রতিক কুইজ তালিকা
           </h3>
           <div className="flex items-center gap-2 text-xs font-bold text-outline bg-surface-container-low px-3 py-1.5 rounded-full">
@@ -193,13 +193,13 @@ export default function QuizHistoryPage() {
             </thead>
             <tbody className="divide-y divide-surface-container-low">
               {quizzes.map((q) => (
-                <tr key={q.id} className="hover:bg-emerald-50/30 transition-colors">
+                <tr key={q.id} className="hover:bg-surface-container-high/30 transition-colors">
                   <td className="px-5 md:px-8 py-4 md:py-5">
                     <p className="text-sm font-semibold">{q.date}</p>
                     <p className="text-[10px] text-outline font-label">{q.time}</p>
                   </td>
                   <td className="px-4 md:px-6 py-4 md:py-5">
-                    <p className="text-sm font-bold text-emerald-900">{q.chapter}</p>
+                    <p className="text-sm font-bold text-on-surface">{q.chapter}</p>
                     <p className="text-[10px] text-outline">{q.sub}</p>
                   </td>
                   <td className="px-4 md:px-6 py-4 md:py-5">

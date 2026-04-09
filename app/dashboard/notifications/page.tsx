@@ -37,7 +37,7 @@ const notifications = [
     id: 4,
     type: "report",
     icon: "assessment",
-    color: "bg-emerald-100 text-emerald-700",
+    color: "bg-primary-fixed/30 text-primary",
     title: "সাপ্তাহিক রিপোর্ট প্রস্তুত",
     body: "অক্টোবরের ২য় সপ্তাহের সাপ্তাহিক রিপোর্ট প্রস্তুত। এই সপ্তাহে সামগ্রিক উন্নতি ৮%।",
     time: "২ দিন আগে",
@@ -150,7 +150,7 @@ export default function NotificationsPage() {
                 onClick={() => toggle(setting.key)}
                 className={`relative w-12 h-6 rounded-full transition-colors ${prefs[setting.key] ? "bg-primary" : "bg-outline-variant"}`}
               >
-                <div className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${prefs[setting.key] ? "translate-x-7" : "translate-x-1"}`} />
+                <div className={`absolute top-1 w-4 h-4 bg-surface-container-lowest rounded-full shadow transition-transform ${prefs[setting.key] ? "translate-x-7" : "translate-x-1"}`} />
               </button>
             </div>
           ))}

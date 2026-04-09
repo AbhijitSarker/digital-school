@@ -58,7 +58,7 @@ export default function ReportsPage() {
         {insights.map((ins) => (
           <div key={ins.title} className={`p-5 md:p-6 rounded-2xl border ${ins.color} bg-opacity-5`}>
             <div className="flex items-start gap-4">
-              <div className="p-2 rounded-xl bg-white shadow-sm shrink-0">
+              <div className="p-2 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shrink-0">
                 <span className="material-symbols-outlined fill-icon" style={{ fontSize: "20px" }}>
                   {ins.icon}
                 </span>

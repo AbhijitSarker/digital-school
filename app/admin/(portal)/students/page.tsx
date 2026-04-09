@@ -13,7 +13,7 @@ const students = [
 ];
 
 const statusConfig: Record<string, { label: string; cls: string }> = {
-  active: { label: 'সক্রিয়', cls: 'bg-emerald-100 text-emerald-700' },
+  active: { label: 'সক্রিয়', cls: 'bg-primary-fixed/30 text-primary' },
   inactive: { label: 'নিষ্ক্রিয়', cls: 'bg-surface-container-high text-on-surface-variant' },
   warning: { label: 'সতর্কতা', cls: 'bg-tertiary-fixed/50 text-on-tertiary-fixed-variant' },
 };
@@ -49,7 +49,7 @@ export default function StudentsPage() {
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট শিক্ষার্থী', value: '১২,৪৫০', icon: 'group', color: 'border-primary text-primary' },
-            { label: 'সক্রিয়', value: '১০,৮৮০', icon: 'check_circle', color: 'border-emerald-500 text-emerald-600' },
+            { label: 'সক্রিয়', value: '১০,৮৮০', icon: 'check_circle', color: 'border-emerald-500 text-primary' },
             { label: 'নিষ্ক্রিয়', value: '১,২০০', icon: 'cancel', color: 'border-outline text-outline' },
             { label: 'সতর্কতা', value: '৩৭০', icon: 'warning', color: 'border-tertiary text-tertiary' },
           ].map((c) => (

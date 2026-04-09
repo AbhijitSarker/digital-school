@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const stats = [
   { value: '৫০,০০০+', label: 'সক্রিয় শিক্ষার্থী', icon: 'school' },
@@ -53,15 +54,15 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
+    <div className="bg-surface font-body text-on-surface antialiased overflow-x-hidden transition-colors">
 
       {/* ─── NAVBAR ─── */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-16 bg-white/90 backdrop-blur-md shadow-sm border-b border-outline-variant/10">
+      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="material-symbols-outlined fill-icon text-white" style={{ fontSize: '18px' }}>school</span>
+            <span className="material-symbols-outlined fill-icon text-on-primary" style={{ fontSize: '18px' }}>school</span>
           </div>
-          <span className="text-xl font-black text-emerald-800 tracking-tight font-headline">BanglaQuest</span>
+          <span className="text-xl font-black text-primary tracking-tight font-headline">BanglaQuest</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
@@ -70,11 +71,12 @@ export default function LandingPage() {
           <a href="#testimonials" className="hover:text-primary transition-colors">অভিজ্ঞতা</a>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Link href="/login" className="px-4 py-2 text-sm font-bold text-primary hover:bg-primary/5 rounded-xl transition-all">
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link href="/login" className="px-4 py-2 text-sm font-bold text-primary hover:bg-primary/10 rounded-xl transition-all">
             লগইন
           </Link>
-          <Link href="/signup" className="px-4 py-2 text-sm font-bold bg-primary text-white rounded-xl hover:bg-primary-container transition-all shadow-md shadow-primary/20">
+          <Link href="/signup" className="px-4 py-2 text-sm font-bold bg-primary text-on-primary rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20">
             বিনামূল্যে শুরু করুন
           </Link>
         </div>
@@ -192,7 +194,7 @@ export default function LandingPage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim/60" />
                     <div className="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/60" />
                   </div>
-                  <div className="flex-1 bg-white rounded-lg px-3 py-1 text-[10px] font-label text-outline flex items-center gap-1.5">
+                  <div className="flex-1 bg-surface-container-lowest rounded-lg px-3 py-1 text-[10px] font-label text-outline flex items-center gap-1.5">
                     <span className="material-symbols-outlined" style={{ fontSize: '11px' }}>lock</span>
                     banglaquest.edu.bd
                   </div>
@@ -258,9 +260,9 @@ export default function LandingPage() {
                   </div>
                   <div className="flex gap-2">
                     {[
-                      { icon: 'military_tech', bg: 'bg-amber-100', color: 'text-amber-600' },
-                      { icon: 'auto_awesome', bg: 'bg-emerald-100', color: 'text-emerald-600' },
-                      { icon: 'workspace_premium', bg: 'bg-blue-100', color: 'text-blue-600' },
+                      { icon: 'military_tech', bg: 'bg-tertiary-fixed/40', color: 'text-tertiary' },
+                      { icon: 'auto_awesome', bg: 'bg-primary-fixed/40', color: 'text-primary' },
+                      { icon: 'workspace_premium', bg: 'bg-primary/10', color: 'text-primary' },
                     ].map((b, i) => (
                       <div key={i} className={`w-10 h-10 ${b.bg} rounded-xl flex items-center justify-center`}>
                         <span className={`material-symbols-outlined fill-icon ${b.color}`} style={{ fontSize: '20px' }}>{b.icon}</span>
@@ -334,10 +336,10 @@ export default function LandingPage() {
             {(activeTab === 'parent' ? parentFeatures : studentFeatures).map((f, i) => (
               <div
                 key={i}
-                className="bg-surface-container-lowest p-6 md:p-8 rounded-3xl shadow-sm border border-outline-variant/10 group hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                className="bg-surface-container p-6 md:p-8 rounded-3xl border border-outline-variant/15 group hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all">
-                  <span className="material-symbols-outlined fill-icon text-primary group-hover:text-white" style={{ fontSize: '28px' }}>{f.icon}</span>
+                  <span className="material-symbols-outlined fill-icon text-primary group-hover:text-on-primary" style={{ fontSize: '28px' }}>{f.icon}</span>
                 </div>
                 <h3 className="text-xl font-bold font-headline text-on-surface mb-2">{f.title}</h3>
                 <p className="text-on-surface-variant leading-relaxed">{f.desc}</p>
@@ -366,7 +368,7 @@ export default function LandingPage() {
             {howItWorks.map((step, i) => (
               <div key={i} className="relative text-center">
                 <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-primary/20 relative z-10">
-                  <span className="material-symbols-outlined fill-icon text-white" style={{ fontSize: '40px' }}>{step.icon}</span>
+                  <span className="material-symbols-outlined fill-icon text-on-primary" style={{ fontSize: '40px' }}>{step.icon}</span>
                   <div className="absolute -top-3 -right-3 w-8 h-8 bg-tertiary-fixed rounded-xl flex items-center justify-center">
                     <span className="text-xs font-black text-on-tertiary-fixed">{step.step}</span>
                   </div>
@@ -403,7 +405,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-surface-container-lowest p-7 rounded-3xl shadow-sm border border-outline-variant/10 flex flex-col gap-4">
+              <div key={i} className="bg-surface-container p-7 rounded-3xl border border-outline-variant/15 flex flex-col gap-4">
                 <div className="flex gap-0.5">
                   {[...Array(t.stars)].map((_, j) => (
                     <span key={j} className="material-symbols-outlined fill-icon text-tertiary-fixed-dim" style={{ fontSize: '16px' }}>star</span>
@@ -442,7 +444,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/signup"
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-2xl hover:bg-primary-fixed transition-all"
+              className="flex items-center justify-center gap-3 px-8 py-4 bg-surface-container-lowest text-primary rounded-2xl font-bold text-lg shadow-2xl hover:bg-primary-fixed hover:text-on-primary-fixed transition-all"
             >
               <span className="material-symbols-outlined fill-icon">family_restroom</span>
               অভিভাবক হিসেবে যোগ দিন

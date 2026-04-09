@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="bn" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="bn" className={`${manrope.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
@@ -39,7 +40,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body">{children}</body>
+      <body className="font-body bg-surface text-on-surface">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -12,7 +12,7 @@ const contentItems = [
 ];
 
 const statusConfig: Record<string, { label: string; cls: string }> = {
-  published: { label: 'প্রকাশিত', cls: 'bg-emerald-100 text-emerald-700' },
+  published: { label: 'প্রকাশিত', cls: 'bg-primary-fixed/30 text-primary' },
   draft: { label: 'ড্রাফট', cls: 'bg-surface-container-high text-on-surface-variant' },
   review: { label: 'পর্যালোচনা', cls: 'bg-tertiary-fixed/50 text-on-tertiary-fixed-variant' },
 };
@@ -45,7 +45,7 @@ export default function ContentPage() {
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট কন্টেন্ট', value: '১,২৮৫', icon: 'folder', color: 'text-primary' },
-            { label: 'প্রকাশিত', value: '৯৮৪', icon: 'check_circle', color: 'text-emerald-600' },
+            { label: 'প্রকাশিত', value: '৯৮৪', icon: 'check_circle', color: 'text-primary' },
             { label: 'ড্রাফট', value: '২১৮', icon: 'edit_note', color: 'text-outline' },
             { label: 'পর্যালোচনায়', value: '৮৩', icon: 'pending', color: 'text-tertiary' },
           ].map((c) => (

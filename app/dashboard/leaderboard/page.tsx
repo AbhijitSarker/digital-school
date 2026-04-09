@@ -6,7 +6,7 @@ type Period = "week" | "month" | "all";
 
 const leaders = [
   { rank: 1, name: "Nafisa Islam", school: "বাউনিয়া সরকারি প্রাথমিক বিদ্যালয়", xp: 8200, avatar: "NI", color: "bg-amber-100 text-amber-800", badge: "🥇" },
-  { rank: 2, name: "Tanvir Ahmed", school: "রহমতপুর সরকারি প্রাথমিক বিদ্যালয়", xp: 7950, avatar: "TA", color: "bg-emerald-100 text-emerald-800", badge: "🥈", isUser: true },
+  { rank: 2, name: "Tanvir Ahmed", school: "রহমতপুর সরকারি প্রাথমিক বিদ্যালয়", xp: 7950, avatar: "TA", color: "bg-primary-fixed/30 text-on-primary-fixed", badge: "🥈", isUser: true },
   { rank: 3, name: "Riya Das", school: "ধানমন্ডি সরকারি প্রাথমিক বিদ্যালয়", xp: 7680, avatar: "RD", color: "bg-blue-100 text-blue-800", badge: "🥉" },
   { rank: 4, name: "Arham Chowdhury", school: "গুলশান সরকারি প্রাথমিক বিদ্যালয়", xp: 6540, avatar: "AC", color: "bg-purple-100 text-purple-800", badge: null },
   { rank: 5, name: "Priya Barua", school: "মিরপুর সরকারি প্রাথমিক বিদ্যালয়", xp: 5900, avatar: "PB", color: "bg-pink-100 text-pink-800", badge: null },
@@ -113,7 +113,7 @@ export default function LeaderboardPage() {
       {/* Full Rankings Table */}
       <div className="bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
         <div className="px-5 md:px-8 py-4 md:py-5 border-b border-surface-container-low flex items-center justify-between">
-          <h3 className="font-headline font-bold text-emerald-900">সম্পূর্ণ র‍্যাংকিং</h3>
+          <h3 className="font-headline font-bold text-on-surface">সম্পূর্ণ র‍্যাংকিং</h3>
           <span className="text-xs font-label text-outline">{period === "week" ? "এই সপ্তাহ" : period === "month" ? "এই মাস" : "সর্বকালীন"}</span>
         </div>
         <div className="divide-y divide-surface-container-low">
@@ -121,7 +121,7 @@ export default function LeaderboardPage() {
             <div
               key={leader.rank}
               className={`flex items-center gap-3 md:gap-4 px-5 md:px-8 py-3 md:py-4 transition-colors ${
-                leader.isUser ? "bg-primary-fixed/20 border-l-4 border-primary" : "hover:bg-emerald-50/30"
+                leader.isUser ? "bg-primary-fixed/20 border-l-4 border-primary" : "hover:bg-surface-container"
               }`}
             >
               <span className="w-6 text-center font-black font-headline text-sm text-on-surface-variant shrink-0">
@@ -158,7 +158,7 @@ export default function LeaderboardPage() {
         {[
           { label: "বর্তমান র‍্যাংক", value: "#২", icon: "leaderboard", color: "text-primary" },
           { label: "শীর্ষে পৌঁছাতে", value: "২৫০ XP", icon: "bolt", color: "text-secondary" },
-          { label: "উন্নতি (এ সপ্তাহ)", value: "+৩ ধাপ", icon: "trending_up", color: "text-emerald-600" },
+          { label: "উন্নতি (এ সপ্তাহ)", value: "+৩ ধাপ", icon: "trending_up", color: "text-primary" },
         ].map((stat) => (
           <div key={stat.label} className="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex items-center gap-4">
             <span className={`material-symbols-outlined fill-icon ${stat.color}`} style={{ fontSize: "28px" }}>{stat.icon}</span>

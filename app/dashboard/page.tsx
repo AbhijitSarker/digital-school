@@ -27,7 +27,7 @@ export default function DashboardPage() {
                 stars
               </span>
             </div>
-            <span className="text-[10px] md:text-xs font-label text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full font-medium">
+            <span className="text-[10px] md:text-xs font-label text-primary bg-primary-fixed/20 px-2 py-0.5 rounded-full font-medium">
               +১২% আজ
             </span>
           </div>
@@ -125,14 +125,14 @@ export default function DashboardPage() {
                 title: "পাঠ ১.২: স্বরবর্ণের ব্যবহার",
                 meta: "১০:৩০ পূর্বাহ্ণ • ব্যাকরণ বিভাগ",
                 xp: "+৫০ XP",
-                color: "text-emerald-700",
+                color: "text-primary",
               },
               {
                 icon: "verified",
                 title: "সাপ্তাহিক কুইজ সম্পন্ন",
                 meta: "১১:১৫ পূর্বাহ্ণ • ২০টি প্রশ্নের মধ্যে ১৮টি সঠিক",
                 xp: "+১৫০ XP",
-                color: "text-emerald-700",
+                color: "text-primary",
               },
               {
                 icon: "emoji_events",
@@ -143,9 +143,9 @@ export default function DashboardPage() {
               },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 md:gap-4 group">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center shrink-0">
                   <span
-                    className="material-symbols-outlined text-emerald-700"
+                    className="material-symbols-outlined text-primary"
                     style={{ fontSize: "20px" }}
                   >
                     {item.icon}
@@ -179,7 +179,7 @@ export default function DashboardPage() {
               <h4 className="text-base md:text-lg font-bold font-headline mb-2">
                 লেভেল ১২ সম্পন্ন হতে বাকি
               </h4>
-              <p className="text-emerald-200 text-xs md:text-sm mb-5">
+              <p className="text-primary-fixed-dim text-xs md:text-sm mb-5">
                 আর মাত্র ৮০০ XP প্রয়োজন পরবর্তী ধাপের জন্য
               </p>
               <div className="w-full bg-primary-container h-2.5 rounded-full overflow-hidden">
@@ -188,7 +188,7 @@ export default function DashboardPage() {
                   style={{ width: "66.6%" }}
                 />
               </div>
-              <p className="text-emerald-300 text-xs mt-2 font-label">
+              <p className="text-primary-fixed text-xs mt-2 font-label">
                 ৪০০ / ১২০০ XP
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function DashboardPage() {
               পরবর্তী পদক্ষেপ
             </h4>
             <div className="flex items-start gap-3 md:gap-4 mb-4">
-              <div className="p-2 bg-white rounded-xl shadow-sm shrink-0">
+              <div className="p-2 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shrink-0">
                 <span
                   className="material-symbols-outlined text-primary"
                   style={{ fontSize: "20px" }}

@@ -10,7 +10,7 @@ const badges = [
 ];
 
 const breakdown = [
-  { icon: 'check_circle', label: 'সঠিক উত্তর', value: '১২', bg: 'bg-emerald-100', color: 'text-emerald-700', textColor: 'text-emerald-800', labelColor: 'text-emerald-600/80' },
+  { icon: 'check_circle', label: 'সঠিক উত্তর', value: '১২', bg: 'bg-primary-fixed/30', color: 'text-primary', textColor: 'text-on-surface', labelColor: 'text-primary/80' },
   { icon: 'cancel', label: 'ভুল উত্তর', value: '০৩', bg: 'bg-red-100', color: 'text-red-600', textColor: 'text-red-800', labelColor: 'text-red-600/80' },
   { icon: 'timer', label: 'মোট সময়', value: '০৮:৪৫', bg: 'bg-blue-100', color: 'text-blue-600', textColor: 'text-blue-800', labelColor: 'text-blue-600/80' },
 ];

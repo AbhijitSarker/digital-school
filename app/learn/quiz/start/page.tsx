@@ -131,8 +131,8 @@ export default function QuizStartPage() {
               </li>
             </ul>
           </div>
-          <div className="bg-emerald-100/50 p-1 rounded-xl">
-            <div className="bg-white p-6 rounded-lg h-full border-2 border-dashed border-emerald-200 flex flex-col justify-center">
+          <div className="bg-primary-fixed/30/50 p-1 rounded-xl">
+            <div className="bg-surface-container-lowest p-6 rounded-lg h-full border-2 border-dashed border-outline-variant/30 flex flex-col justify-center">
               <p className="italic text-primary/80 font-medium leading-relaxed mb-4">
                 "সাফল্য কোনো গন্তব্য নয়, এটি একটি যাত্রা। ভাষা শেখা হচ্ছে সংস্কৃতির হৃদপিণ্ড স্পর্শ করা।"
               </p>

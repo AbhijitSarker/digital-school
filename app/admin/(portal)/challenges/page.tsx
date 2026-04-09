@@ -11,7 +11,7 @@ const challenges = [
 ];
 
 const statusConfig: Record<string, { label: string; cls: string; dot: string }> = {
-  active: { label: 'চলমান', cls: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500' },
+  active: { label: 'চলমান', cls: 'bg-primary-fixed/30 text-primary', dot: 'bg-primary-fixed/150' },
   scheduled: { label: 'নির্ধারিত', cls: 'bg-primary/10 text-primary', dot: 'bg-primary' },
   completed: { label: 'সম্পন্ন', cls: 'bg-surface-container-high text-on-surface-variant', dot: 'bg-outline' },
 };
@@ -39,7 +39,7 @@ export default function ChallengesPage() {
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           {[
             { label: 'মোট চ্যালেঞ্জ', value: '৮৬', icon: 'emoji_events', color: 'text-primary' },
-            { label: 'চলমান', value: '৩', icon: 'play_circle', color: 'text-emerald-600' },
+            { label: 'চলমান', value: '৩', icon: 'play_circle', color: 'text-primary' },
             { label: 'মোট অংশগ্রহণ', value: '৪৮,৮৮০', icon: 'group', color: 'text-tertiary' },
             { label: 'গড় সমাপ্তি হার', value: '৭২%', icon: 'task_alt', color: 'text-secondary' },
           ].map((c) => (

@@ -201,7 +201,7 @@ export default function MiniGamePage() {
               disabled={card.matched || isProcessing}
               className={`relative aspect-[3/4] rounded-2xl transition-all duration-300 ${
                 card.matched
-                  ? 'bg-emerald-50 border-2 border-emerald-200 opacity-50 cursor-default'
+                  ? 'bg-primary-fixed/15 border-2 border-outline-variant/30 opacity-50 cursor-default'
                   : card.flipped
                   ? 'bg-primary-container shadow-lg border-2 border-primary-fixed scale-105 cursor-default'
                   : 'bg-surface-container-lowest shadow-sm hover:shadow-md hover:scale-105 cursor-pointer border-b-4 border-primary/10'
@@ -209,8 +209,8 @@ export default function MiniGamePage() {
             >
               {card.matched ? (
                 <div className="flex flex-col items-center justify-center h-full">
-                  <span className="material-symbols-outlined fill-icon text-emerald-600 text-4xl mb-1">check_circle</span>
-                  <p className="text-emerald-800 font-bold text-xs uppercase tracking-tighter">সংযোজিত</p>
+                  <span className="material-symbols-outlined fill-icon text-primary text-4xl mb-1">check_circle</span>
+                  <p className="text-on-surface font-bold text-xs uppercase tracking-tighter">সংযোজিত</p>
                 </div>
               ) : card.flipped ? (
                 <div className="flex flex-col items-center justify-center h-full p-2 text-center">

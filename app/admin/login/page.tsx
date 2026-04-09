@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-dim font-body flex items-center justify-center p-6">
+    <div className="min-h-screen bg-surface-dim font-body flex items-center justify-center p-6 transition-colors">
       {/* Background decoration */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-emerald-950/5 via-transparent to-secondary/5" />
@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
 
       <div className="w-full max-w-4xl bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/10 flex flex-col md:flex-row min-h-[540px]">
         {/* Left: Branding */}
-        <div className="hidden md:flex md:w-1/2 p-10 flex-col justify-between relative bg-emerald-900 overflow-hidden">
+        <div className="hidden md:flex md:w-1/2 p-10 flex-col justify-between relative bg-emerald-950 overflow-hidden">
           {/* Subtle pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)', backgroundSize: '12px 12px' }} />

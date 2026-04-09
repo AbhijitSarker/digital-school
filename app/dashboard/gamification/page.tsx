@@ -7,7 +7,7 @@ const badges = [
   { icon: "bolt", name: "বিদ্যুৎ গতি", color: "text-secondary", tooltip: "৫ মিনিটে কুইজ শেষ করে অর্জিত", locked: false },
   { icon: "book", name: "পুঁথি পাঠক", color: "text-primary", tooltip: "১০টি পাঠ সম্পূর্ণ করে অর্জিত", locked: false },
   { icon: "military_tech", name: "সপ্তাহের সেরা", color: "text-amber-500", tooltip: "গত সপ্তাহে সর্বোচ্চ স্কোর করে অর্জিত", locked: false },
-  { icon: "history_edu", name: "ব্যাকরণ বিদ", color: "text-emerald-400", tooltip: "ব্যাকরণ কুইজে ১০০% সঠিক উত্তর দিয়ে অর্জিত", locked: false },
+  { icon: "history_edu", name: "ব্যাকরণ বিদ", color: "text-primary-fixed-dim", tooltip: "ব্যাকরণ কুইজে ১০০% সঠিক উত্তর দিয়ে অর্জিত", locked: false },
   { icon: "lock", name: "অভিযাত্রী", color: "text-outline", tooltip: "এখনও অর্জিত হয়নি", locked: true },
   { icon: "lock", name: "ভাষা সৈনিক", color: "text-outline", tooltip: "৯৫% এ পৌঁছান", locked: true },
   { icon: "lock", name: "মহাজ্ঞানী", color: "text-outline", tooltip: "সব বিষয়ে ৯০%+ অর্জন করুন", locked: true },
@@ -61,7 +61,7 @@ export default function GamificationPage() {
             </p>
             {/* Week visualization */}
             <div className="mt-6 md:mt-8">
-              <div className="flex flex-1 justify-between items-center bg-white/10 rounded-2xl p-3 md:p-4 backdrop-blur-sm">
+              <div className="flex flex-1 justify-between items-center bg-surface-container-low/60 rounded-2xl p-3 md:p-4 backdrop-blur-sm">
                 {weekDays.map((d) => (
                   <div key={d.day} className="flex flex-col items-center gap-1">
                     <span className={`text-[10px] ${d.current ? "font-bold text-tertiary-fixed" : "opacity-60"}`}>
@@ -83,7 +83,7 @@ export default function GamificationPage() {
               </div>
             </div>
           </div>
-          <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-surface-container/30 rounded-full blur-3xl" />
         </div>
 
         {/* Level Progress */}
@@ -93,12 +93,12 @@ export default function GamificationPage() {
               <span className="font-label text-xs uppercase tracking-widest text-outline mb-2 block">
                 অগ্রগতি ট্র্যাকার
               </span>
-              <h2 className="text-2xl md:text-3xl font-black font-headline text-emerald-900">
+              <h2 className="text-2xl md:text-3xl font-black font-headline text-on-surface">
                 লেভেল ১২
               </h2>
             </div>
             <div className="text-right">
-              <span className="text-emerald-900 font-bold text-xl md:text-2xl">
+              <span className="text-on-surface font-bold text-xl md:text-2xl">
                 ৪৫০ / ৬০০{" "}
                 <span className="text-sm font-normal text-outline">XP</span>
               </span>
@@ -111,13 +111,13 @@ export default function GamificationPage() {
               className="h-full bg-gradient-to-r from-primary to-primary-container rounded-full relative"
               style={{ width: "75%" }}
             >
-              <div className="absolute right-2 top-1.5 w-4 h-4 bg-white/20 rounded-full blur-sm" />
+              <div className="absolute right-2 top-1.5 w-4 h-4 bg-surface-container-low/40 rounded-full blur-sm" />
             </div>
           </div>
           {/* Mini Stats */}
           <div className="grid grid-cols-3 gap-3 md:gap-4">
             {[
-              { icon: "menu_book", val: "১৫", label: "বই শেষ", bg: "bg-emerald-50", ic: "text-emerald-700", vc: "text-emerald-900" },
+              { icon: "menu_book", val: "১৫", label: "বই শেষ", bg: "bg-primary-fixed/15", ic: "text-emerald-700", vc: "text-on-surface" },
               { icon: "star", val: "১২০", label: "অর্জিত স্টার", bg: "bg-orange-50", ic: "text-orange-700", vc: "text-orange-900" },
               { icon: "emoji_events", val: "৮", label: "ব্যাজ অর্জন", bg: "bg-purple-50", ic: "text-purple-700", vc: "text-purple-900" },
             ].map((stat) => (
@@ -135,7 +135,7 @@ export default function GamificationPage() {
         {/* XP Chart */}
         <div className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-6 md:p-8 shadow-sm border border-emerald-100/20">
           <div className="flex justify-between items-center mb-8 md:mb-10">
-            <h3 className="font-headline font-bold text-lg md:text-xl text-emerald-900">
+            <h3 className="font-headline font-bold text-lg md:text-xl text-on-surface">
               গত ৩০ দিনের XP অগ্রগতি
             </h3>
             <div className="flex gap-2">
@@ -145,7 +145,7 @@ export default function GamificationPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-3 md:px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                     activeTab === tab
-                      ? "bg-emerald-100 text-emerald-900"
+                      ? "bg-primary-fixed/25 text-on-surface"
                       : "text-outline hover:bg-surface-container"
                   }`}
                 >
@@ -164,7 +164,7 @@ export default function GamificationPage() {
               {xpBars.map((h, i) => (
                 <div
                   key={i}
-                  className={`flex-1 rounded-t-full transition-all hover:opacity-80 ${i === 9 ? "bg-primary" : "bg-emerald-100"}`}
+                  className={`flex-1 rounded-t-full transition-all hover:opacity-80 ${i === 9 ? "bg-primary" : "bg-primary-fixed/25"}`}
                   style={{ height: `${h}%` }}
                 />
               ))}
@@ -181,7 +181,7 @@ export default function GamificationPage() {
         {/* XP Wallet + Challenge */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-4 md:gap-6">
           <div className="flex-1 bg-tertiary-fixed rounded-[2rem] p-6 md:p-8 shadow-sm relative overflow-hidden flex flex-col items-center justify-center text-center">
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-md mb-3 md:mb-4">
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md mb-3 md:mb-4">
               <span className="material-symbols-outlined text-tertiary fill-icon" style={{ fontSize: "32px" }}>
                 monetization_on
               </span>
@@ -199,7 +199,7 @@ export default function GamificationPage() {
               <span className="material-symbols-outlined text-secondary" style={{ fontSize: "20px" }}>
                 campaign
               </span>
-              <span className="font-bold text-emerald-900">নতুন চ্যালেঞ্জ!</span>
+              <span className="font-bold text-on-surface">নতুন চ্যালেঞ্জ!</span>
             </div>
             <p className="text-sm text-outline mb-4">
               আজকের ৩টি কুইজ সম্পন্ন করলে পাবেন অতিরিক্ত ১০০ XP।
@@ -217,7 +217,7 @@ export default function GamificationPage() {
         <div className="col-span-12 bg-surface-container-lowest rounded-[2rem] p-6 md:p-8 shadow-sm border border-emerald-100/20">
           <div className="flex justify-between items-center mb-6 md:mb-8">
             <div>
-              <h3 className="font-headline font-bold text-xl md:text-2xl text-emerald-900">
+              <h3 className="font-headline font-bold text-xl md:text-2xl text-on-surface">
                 অর্জিত ব্যাজসমূহ
               </h3>
               <p className="text-outline text-sm">Tanvir এর সকল কৃতিত্ব এখানে সংরক্ষিত</p>
@@ -231,19 +231,19 @@ export default function GamificationPage() {
                 className={`group relative flex flex-col items-center p-4 md:p-6 rounded-3xl transition-all cursor-help ${
                   badge.locked
                     ? "bg-surface-container/50 opacity-40 border-2 border-dashed border-outline-variant grayscale"
-                    : "bg-surface-container hover:bg-emerald-50"
+                    : "bg-surface-container hover:bg-primary-fixed/15"
                 }`}
               >
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 transition-transform">
                   <span className={`material-symbols-outlined fill-icon ${badge.color}`} style={{ fontSize: "28px" }}>
                     {badge.icon}
                   </span>
                 </div>
-                <span className="text-xs font-bold text-emerald-900 text-center leading-tight">
+                <span className="text-xs font-bold text-on-surface text-center leading-tight">
                   {badge.name}
                 </span>
                 {!badge.locked && (
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-emerald-900 text-white text-[10px] px-3 py-1.5 rounded-lg whitespace-nowrap z-20 pointer-events-none">
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-on-surface text-surface text-[10px] px-3 py-1.5 rounded-lg whitespace-nowrap z-20 pointer-events-none">
                     {badge.tooltip}
                   </div>
                 )}
