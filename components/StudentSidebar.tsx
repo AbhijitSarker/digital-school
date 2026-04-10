@@ -21,30 +21,30 @@ export default function StudentSidebar() {
 
   return (
     <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 z-40
-      bg-emerald-900 dark:bg-emerald-950
-      border-r border-emerald-800/50 dark:border-emerald-900/40
+      bg-[#f2f7f4] dark:bg-[#01160D]
+      border-r border-emerald-100/70 dark:border-green-900/30
       shadow-2xl shadow-black/20
     ">
       {/* Header */}
-      <div className="px-6 pt-6 pb-4 border-b border-emerald-800/40 dark:border-emerald-900/40">
+      <div className="px-6 pt-6 pb-4 border-b border-emerald-100/70 dark:border-green-900/30">
         <h1 className="text-xl font-extrabold font-headline tracking-tight
-          text-emerald-300 dark:text-emerald-400">
+          text-emerald-700 dark:text-primary">
           বাংলাকুয়েস্ট
         </h1>
         <p className="text-xs font-semibold mt-0.5
-          text-emerald-500/80 dark:text-emerald-700/80">
+          text-emerald-600/70 dark:text-slate-400">
           শ্রেণী ৭
         </p>
       </div>
 
       {/* XP Progress */}
-      <div className="px-6 py-4 border-b border-emerald-800/30 dark:border-emerald-900/40">
+      <div className="px-6 py-4 border-b border-emerald-100/70 dark:border-green-900/30">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-bold text-emerald-400 dark:text-emerald-500 uppercase tracking-wide">Level 12</span>
-          <span className="text-xs text-emerald-500/70 dark:text-emerald-700/80">250 XP বাকি</span>
+          <span className="text-xs font-bold text-emerald-700 dark:text-primary uppercase tracking-wide">Level 12</span>
+          <span className="text-xs text-emerald-600/70 dark:text-slate-400">250 XP বাকি</span>
         </div>
-        <div className="w-full h-2 rounded-full bg-emerald-900/60 dark:bg-emerald-900/50 overflow-hidden">
-          <div className="h-full w-[65%] rounded-full bg-emerald-400 dark:bg-emerald-500" />
+        <div className="w-full h-2 rounded-full bg-emerald-100 dark:bg-green-900/50 overflow-hidden">
+          <div className="h-full w-[65%] rounded-full bg-emerald-600 dark:bg-emerald-500" />
         </div>
       </div>
 
@@ -58,8 +58,8 @@ export default function StudentSidebar() {
               href={item.href}
               className={`flex items-center gap-4 px-4 py-3 transition-all duration-200 ease-in-out active:translate-x-1 ${
                 active
-                  ? 'bg-emerald-500/10 dark:bg-emerald-500/10 text-emerald-300 dark:text-emerald-400 font-bold border-r-4 border-emerald-400 dark:border-emerald-500'
-                  : 'text-emerald-500/70 dark:text-emerald-700/80 hover:text-emerald-300 dark:hover:text-emerald-400 hover:bg-emerald-900/50 dark:hover:bg-emerald-900/50'
+                  ? 'bg-emerald-100/85 dark:bg-green-600/10 text-emerald-900 dark:text-primary font-bold border-l-4 border-emerald-600 dark:border-primary'
+                  : 'text-emerald-700 dark:text-slate-400 hover:bg-emerald-100/65 hover:text-emerald-900 dark:hover:bg-green-900/10 dark:hover:text-green-400'
               }`}
             >
               <span
@@ -75,12 +75,12 @@ export default function StudentSidebar() {
       </nav>
 
       {/* CTA */}
-      <div className="p-4 border-t border-emerald-800/40 dark:border-emerald-900/40">
+      <div className="p-4 border-t border-emerald-100/70 dark:border-green-900/30">
         <Link
           href="/learn/quiz/start"
           className="w-full py-3 px-4 rounded-xl font-bold text-sm tracking-wide shadow-lg
             hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2
-            bg-emerald-500 dark:bg-primary text-emerald-950 dark:text-on-primary"
+            bg-primary text-on-primary"
         >
           <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>add</span>
           নতুন পাঠ শুরু করুন

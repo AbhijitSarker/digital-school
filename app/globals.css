@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use .dark class (from next-themes) for all dark: utilities — Tailwind v4 default is media query */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Heritage Pulse Design Tokens — Light */
   --color-primary: #004900;
@@ -191,12 +194,13 @@
     border-radius: 2rem 2rem 0 0;
   }
 
+  /* Sidebar links — light mode uses mid-emerald tones on #f2f7f4 mint background */
   .sidebar-link {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    color: var(--color-on-surface-variant);
+    color: #047857; /* emerald-700: clearly readable on mint, not harsh */
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 0 9999px 9999px 0;
@@ -205,8 +209,8 @@
 
   .sidebar-link:hover {
     transform: translateX(4px);
-    background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
-    color: var(--color-primary);
+    background-color: rgb(209 250 229 / 0.65); /* emerald-100/65 */
+    color: #064e3b; /* emerald-900 */
   }
 
   .sidebar-link-active {
@@ -214,11 +218,25 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
-    color: var(--color-primary);
+    background-color: rgb(209 250 229 / 0.85); /* emerald-100/85 */
+    color: #064e3b; /* emerald-900 — high contrast, clearly "selected" */
     font-size: 0.875rem;
     font-weight: 700;
     border-radius: 0 9999px 9999px 0;
+    border-right: 4px solid #059669; /* emerald-600 — vivid accent bar */
+  }
+
+  /* Dark mode restores token-based glowing-green palette */
+  .dark .sidebar-link {
+    color: var(--color-on-surface-variant); /* #bfcab7 in dark */
+  }
+  .dark .sidebar-link:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    color: var(--color-primary); /* #82db6f in dark */
+  }
+  .dark .sidebar-link-active {
+    background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+    color: var(--color-primary); /* #82db6f in dark */
     border-right: 4px solid var(--color-primary);
   }
 

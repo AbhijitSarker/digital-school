@@ -21,9 +21,9 @@ export default function MobileNav() {
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 w-full
-      bg-surface-container-lowest/95 dark:bg-[#01160D]
+      bg-white/95 dark:bg-[#01160D]
       backdrop-blur-xl
-      border-t border-outline-variant/20 dark:border-green-900/30
+      border-t border-emerald-100/70 dark:border-green-900/30
       flex justify-around items-center py-2 z-50">
       {mobileItems.map((item) => (
         <Link
