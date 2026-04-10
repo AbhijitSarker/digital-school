@@ -7,11 +7,11 @@ export default function AnimatedLessonPage() {
   const [isNarrating, setIsNarrating] = useState(true);
 
   return (
-    <div className="bg-surface-dim min-h-screen p-4 md:p-8">
+    <div className="bg-surface-dim dark:bg-background min-h-screen p-4 md:p-8">
       {/* Browser Frame */}
-      <div className="max-w-5xl mx-auto bg-surface-container-lowest shadow-2xl rounded-xl overflow-hidden flex flex-col">
+      <div className="max-w-5xl mx-auto bg-surface-container-lowest dark:border dark:border-emerald-900/20 shadow-2xl rounded-xl overflow-hidden flex flex-col">
         {/* Address Bar */}
-        <div className="bg-surface-container-high px-6 py-3 flex items-center gap-4">
+        <div className="bg-surface-container-high dark:bg-emerald-900/30 px-6 py-3 flex items-center gap-4">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-error/40" />
             <div className="w-3 h-3 rounded-full bg-tertiary-fixed-dim/40" />
@@ -51,7 +51,7 @@ export default function AnimatedLessonPage() {
         {/* Main Area */}
         <div className="flex overflow-hidden">
           {/* Side Nav */}
-          <aside className="hidden md:flex w-56 bg-surface-container-low flex-col py-6 gap-2">
+          <aside className="hidden md:flex w-56 bg-surface-container-low dark:bg-emerald-950/80 dark:border-r dark:border-emerald-900/40 flex-col py-6 gap-2">
             <div className="px-6 mb-6 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary-fixed">menu_book</span>
@@ -72,8 +72,8 @@ export default function AnimatedLessonPage() {
                 key={i}
                 className={`flex items-center gap-3 py-3 cursor-pointer transition-all ${
                   item.active
-                    ? 'text-primary font-bold border-l-4 border-secondary pl-4 bg-primary-fixed-dim/10'
-                    : 'text-on-surface-variant pl-5 hover:bg-surface-container/50'
+                    ? 'text-primary dark:text-emerald-400 font-bold border-r-4 border-primary dark:border-emerald-500 pl-4 bg-primary-fixed-dim/10 dark:bg-emerald-500/10'
+                    : 'text-on-surface-variant dark:text-emerald-700/80 pl-5 hover:bg-surface-container/50 dark:hover:bg-emerald-900/50 dark:hover:text-emerald-400'
                 }`}
               >
                 <span className={`material-symbols-outlined ${item.active ? 'fill-icon' : ''}`}>{item.icon}</span>
@@ -91,7 +91,7 @@ export default function AnimatedLessonPage() {
           </aside>
 
           {/* Content */}
-          <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-surface-container-lowest relative">
+          <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-surface-container-lowest dark:bg-surface-container relative">
             <div className="max-w-2xl mx-auto mb-10">
               <span className="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold font-label tracking-wider uppercase mb-4 inline-block">
                 অধ্যায় ৩: ভগ্নাংশের খেলা
@@ -108,7 +108,7 @@ export default function AnimatedLessonPage() {
             {/* Bento Grid */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-3xl mx-auto">
               {/* Animated Fraction Bars */}
-              <div className="md:col-span-8 bg-surface-container-low rounded-3xl p-6 md:p-8 border border-outline-variant/15">
+              <div className="md:col-span-8 bg-surface-container-low rounded-3xl p-6 md:p-8 border border-outline-variant/15 dark:border-emerald-900/20">
                 <h3 className="text-xl font-bold font-headline text-primary mb-6 flex items-center gap-2">
                   <span className="material-symbols-outlined fill-icon text-secondary">animation</span>
                   অ্যানিমেটেড ভগ্নাংশ তুলনা
@@ -233,7 +233,7 @@ export default function AnimatedLessonPage() {
               </div>
 
               {/* Mini Challenge */}
-              <div className="md:col-span-12 bg-surface-container-lowest rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/20 shadow-sm">
+              <div className="md:col-span-12 bg-surface-container-lowest rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/20 dark:border-emerald-900/20 shadow-sm">
                 <div className="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden bg-surface-container-low flex items-center justify-center relative">
                   <div className="text-center p-6">
                     <div className="text-6xl font-black text-primary font-headline">১/৩</div>
@@ -265,7 +265,7 @@ export default function AnimatedLessonPage() {
             </div>
 
             {/* Floating Toolbar */}
-            <div className="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 bg-surface-container-lowest/90 backdrop-blur-xl px-6 py-3 rounded-full shadow-2xl border border-outline-variant/10 flex items-center gap-4 z-50">
+            <div className="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 bg-surface-container-lowest/90 backdrop-blur-xl px-6 py-3 rounded-full shadow-2xl border border-outline-variant/10 dark:border-emerald-900/20 flex items-center gap-4 z-50">
               <button className="flex flex-col items-center gap-0.5 text-primary group">
                 <span className="material-symbols-outlined group-hover:scale-110 transition-transform">text_fields</span>
                 <span className="text-[10px] font-bold uppercase font-label">Font</span>

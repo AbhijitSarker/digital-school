@@ -14,7 +14,7 @@ const students = [
 
 const statusConfig: Record<string, { label: string; cls: string }> = {
   active: { label: 'সক্রিয়', cls: 'bg-primary-fixed/30 text-primary' },
-  inactive: { label: 'নিষ্ক্রিয়', cls: 'bg-surface-container-high text-on-surface-variant' },
+  inactive: { label: 'নিষ্ক্রিয়', cls: 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant' },
   warning: { label: 'সতর্কতা', cls: 'bg-tertiary-fixed/50 text-on-tertiary-fixed-variant' },
 };
 
@@ -64,8 +64,8 @@ export default function StudentsPage() {
         </div>
 
         {/* Filters + search */}
-        <div className="bg-surface-container-lowest rounded-2xl shadow-sm">
-          <div className="p-5 border-b border-outline-variant/10 flex flex-wrap gap-3 justify-between items-center">
+        <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm">
+          <div className="p-5 border-b border-outline-variant/10 dark:border-green-900/10 flex flex-wrap gap-3 justify-between items-center">
             <div className="flex items-center gap-3 bg-surface-container px-4 py-2 rounded-xl flex-1 max-w-xs">
               <span className="material-symbols-outlined text-outline" style={{ fontSize: '18px' }}>search</span>
               <input
@@ -81,7 +81,7 @@ export default function StudentsPage() {
                 <button
                   key={s}
                   onClick={() => setFilterStatus(s)}
-                  className={`px-3 py-1.5 text-xs font-label font-bold rounded-lg transition-all ${filterStatus === s ? 'bg-primary text-white' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'}`}
+                  className={`px-3 py-1.5 text-xs font-label font-bold rounded-lg transition-all ${filterStatus === s ? 'bg-primary text-white' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-green-900/10'}`}
                 >
                   {s === 'all' ? 'সব' : s === 'active' ? 'সক্রিয়' : s === 'inactive' ? 'নিষ্ক্রিয়' : 'সতর্কতা'}
                 </button>
@@ -146,10 +146,10 @@ export default function StudentsPage() {
                     </td>
                     <td className="px-5 py-4">
                       <div className="flex gap-2">
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="View">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors" title="View">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>visibility</span>
                         </button>
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Edit">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors" title="Edit">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>edit</span>
                         </button>
                         <button className="p-1.5 rounded-lg bg-error-container/30 hover:bg-error-container text-error transition-colors" title="Delete">
@@ -163,11 +163,11 @@ export default function StudentsPage() {
             </table>
 
             {/* Pagination */}
-            <div className="p-5 border-t border-outline-variant/10 flex justify-between items-center">
+            <div className="p-5 border-t border-outline-variant/10 dark:border-green-900/10 flex justify-between items-center">
               <p className="text-sm text-outline font-label">{filtered.length} টি ফলাফল দেখাচ্ছে</p>
               <div className="flex gap-1">
                 {[1, 2, 3, '...', 12].map((p, i) => (
-                  <button key={i} className={`w-8 h-8 rounded-lg text-xs font-label font-bold transition-all ${p === 1 ? 'bg-primary text-white' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'}`}>
+                  <button key={i} className={`w-8 h-8 rounded-lg text-xs font-label font-bold transition-all ${p === 1 ? 'bg-primary text-white' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-green-900/10'}`}>
                     {p}
                   </button>
                 ))}

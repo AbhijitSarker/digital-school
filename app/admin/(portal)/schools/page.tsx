@@ -14,7 +14,7 @@ const schools = [
 const planConfig: Record<string, string> = {
   'প্রিমিয়াম': 'bg-tertiary-fixed text-on-tertiary-fixed',
   'স্ট্যান্ডার্ড': 'bg-primary/10 text-primary',
-  'ফ্রি': 'bg-surface-container-high text-on-surface-variant',
+  'ফ্রি': 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant',
 };
 
 export default function SchoolsPage() {
@@ -42,7 +42,7 @@ export default function SchoolsPage() {
             { label: 'স্ট্যান্ডার্ড', value: '৫৮', icon: 'verified', color: 'text-primary bg-primary/5' },
             { label: 'ট্রায়াল', value: '২৩', icon: 'schedule', color: 'text-outline bg-surface-container-high' },
           ].map((c) => (
-            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10">
+            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10 dark:border-green-900/10">
               <div className={`w-10 h-10 rounded-xl ${c.color.split(' ')[1]} flex items-center justify-center mb-3`}>
                 <span className={`material-symbols-outlined fill-icon ${c.color.split(' ')[0]}`} style={{ fontSize: '22px' }}>{c.icon}</span>
               </div>
@@ -53,8 +53,8 @@ export default function SchoolsPage() {
         </div>
 
         {/* School table */}
-        <div className="bg-surface-container-lowest rounded-2xl shadow-sm">
-          <div className="p-5 border-b border-outline-variant/10 flex flex-wrap gap-3 justify-between items-center">
+        <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm">
+          <div className="p-5 border-b border-outline-variant/10 dark:border-green-900/10 flex flex-wrap gap-3 justify-between items-center">
             <div className="flex items-center gap-3 bg-surface-container px-4 py-2 rounded-xl flex-1 max-w-xs">
               <span className="material-symbols-outlined text-outline" style={{ fontSize: '18px' }}>search</span>
               <input type="text" placeholder="স্কুল খুঁজুন..." className="flex-1 bg-transparent text-sm outline-none placeholder:text-outline/60" />
@@ -108,10 +108,10 @@ export default function SchoolsPage() {
                     <td className="px-5 py-4 text-on-surface-variant text-xs">{s.joined}</td>
                     <td className="px-5 py-4">
                       <div className="flex gap-2">
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>visibility</span>
                         </button>
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>edit</span>
                         </button>
                       </div>

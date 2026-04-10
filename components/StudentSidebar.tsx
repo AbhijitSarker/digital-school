@@ -20,35 +20,69 @@ export default function StudentSidebar() {
   };
 
   return (
-    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-[#01160D] border-r border-outline-variant/20 dark:border-green-900/30 py-6 gap-2 z-40">
-      <div className="px-6 mb-6">
-        <h1 className="text-xl font-extrabold text-primary font-headline tracking-tight">বাংলাকুয়েস্ট</h1>
-        <p className="text-sm font-semibold text-on-surface-variant opacity-70">শ্রেণী ৭</p>
+    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 z-40
+      bg-emerald-900 dark:bg-emerald-950
+      border-r border-emerald-800/50 dark:border-emerald-900/40
+      shadow-2xl shadow-black/20
+    ">
+      {/* Header */}
+      <div className="px-6 pt-6 pb-4 border-b border-emerald-800/40 dark:border-emerald-900/40">
+        <h1 className="text-xl font-extrabold font-headline tracking-tight
+          text-emerald-300 dark:text-emerald-400">
+          বাংলাকুয়েস্ট
+        </h1>
+        <p className="text-xs font-semibold mt-0.5
+          text-emerald-500/80 dark:text-emerald-700/80">
+          শ্রেণী ৭
+        </p>
       </div>
-      <nav className="flex-1 space-y-1">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`flex items-center gap-3 py-3 transition-all duration-200 ${
-              isActive(item.href)
-                ? 'text-primary font-bold border-l-4 border-secondary pl-4 bg-primary-fixed/20'
-                : 'text-on-surface-variant pl-5 hover:bg-surface-container-high/60 hover:translate-x-1'
-            }`}
-          >
-            <span className={`material-symbols-outlined ${isActive(item.href) ? 'fill-icon' : ''}`}>
-              {item.icon}
-            </span>
-            <span className="text-sm font-semibold">{item.label}</span>
-          </Link>
-        ))}
+
+      {/* XP Progress */}
+      <div className="px-6 py-4 border-b border-emerald-800/30 dark:border-emerald-900/40">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-xs font-bold text-emerald-400 dark:text-emerald-500 uppercase tracking-wide">Level 12</span>
+          <span className="text-xs text-emerald-500/70 dark:text-emerald-700/80">250 XP বাকি</span>
+        </div>
+        <div className="w-full h-2 rounded-full bg-emerald-900/60 dark:bg-emerald-900/50 overflow-hidden">
+          <div className="h-full w-[65%] rounded-full bg-emerald-400 dark:bg-emerald-500" />
+        </div>
+      </div>
+
+      {/* Nav Links */}
+      <nav className="flex-1 overflow-y-auto py-3">
+        {navItems.map((item) => {
+          const active = isActive(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex items-center gap-4 px-4 py-3 transition-all duration-200 ease-in-out active:translate-x-1 ${
+                active
+                  ? 'bg-emerald-500/10 dark:bg-emerald-500/10 text-emerald-300 dark:text-emerald-400 font-bold border-r-4 border-emerald-400 dark:border-emerald-500'
+                  : 'text-emerald-500/70 dark:text-emerald-700/80 hover:text-emerald-300 dark:hover:text-emerald-400 hover:bg-emerald-900/50 dark:hover:bg-emerald-900/50'
+              }`}
+            >
+              <span
+                className="material-symbols-outlined shrink-0"
+                style={{ fontSize: '20px', fontVariationSettings: active ? "'FILL' 1" : "'FILL' 0" }}
+              >
+                {item.icon}
+              </span>
+              <span className="text-sm">{item.label}</span>
+            </Link>
+          );
+        })}
       </nav>
-      <div className="px-4 mt-auto">
+
+      {/* CTA */}
+      <div className="p-4 border-t border-emerald-800/40 dark:border-emerald-900/40">
         <Link
           href="/learn/quiz/start"
-          className="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-bold text-sm tracking-wide shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2 uppercase"
+          className="w-full py-3 px-4 rounded-xl font-bold text-sm tracking-wide shadow-lg
+            hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2
+            bg-emerald-500 dark:bg-primary text-emerald-950 dark:text-on-primary"
         >
-          <span className="material-symbols-outlined text-sm">add</span>
+          <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>add</span>
           নতুন পাঠ শুরু করুন
         </Link>
       </div>

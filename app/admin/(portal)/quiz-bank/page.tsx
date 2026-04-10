@@ -54,7 +54,7 @@ export default function QuizBankPage() {
             { label: 'ড্রাফট', value: '৯৮', icon: 'edit_note', color: 'text-outline' },
             { label: 'মোট প্রশ্ন', value: '৫,৪৪০', icon: 'help', color: 'text-tertiary' },
           ].map((c) => (
-            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10">
+            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10 dark:border-green-900/10">
               <span className={`material-symbols-outlined fill-icon ${c.color} block mb-2`} style={{ fontSize: '22px' }}>{c.icon}</span>
               <div className={`text-2xl font-headline font-bold ${c.color}`}>{c.value}</div>
               <div className="text-xs font-label text-outline mt-0.5">{c.label}</div>
@@ -63,8 +63,8 @@ export default function QuizBankPage() {
         </div>
 
         {/* Quiz table */}
-        <div className="bg-surface-container-lowest rounded-2xl shadow-sm">
-          <div className="p-5 border-b border-outline-variant/10 flex gap-3 items-center flex-wrap">
+        <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm">
+          <div className="p-5 border-b border-outline-variant/10 dark:border-green-900/10 flex gap-3 items-center flex-wrap">
             <div className="flex items-center gap-3 bg-surface-container px-4 py-2 rounded-xl flex-1 max-w-xs">
               <span className="material-symbols-outlined text-outline" style={{ fontSize: '18px' }}>search</span>
               <input type="text" placeholder="কুইজ খুঁজুন..." className="flex-1 bg-transparent text-sm outline-none placeholder:text-outline/60" />
@@ -119,16 +119,16 @@ export default function QuizBankPage() {
                     <td className="px-3 py-4 text-on-surface-variant font-label">{q.attempts}</td>
                     <td className="px-3 py-4 font-bold text-primary font-label">{q.avgScore}</td>
                     <td className="px-3 py-4">
-                      <span className={`text-[11px] font-label font-bold px-2 py-1 rounded-full ${q.status === 'active' ? 'bg-primary-fixed/30 text-primary' : 'bg-surface-container-high text-on-surface-variant'}`}>
+                      <span className={`text-[11px] font-label font-bold px-2 py-1 rounded-full ${q.status === 'active' ? 'bg-primary-fixed/30 text-primary' : 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant'}`}>
                         {q.status === 'active' ? 'সক্রিয়' : 'ড্রাফট'}
                       </span>
                     </td>
                     <td className="px-3 py-4">
                       <div className="flex gap-1.5">
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>edit</span>
                         </button>
-                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <button className="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                           <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>copy_all</span>
                         </button>
                         <button className="p-1.5 rounded-lg bg-error-container/30 hover:bg-error-container text-error transition-colors">

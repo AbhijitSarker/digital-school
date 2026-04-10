@@ -27,7 +27,7 @@ export default function QuizResultsPage() {
     <div className="min-h-screen bg-surface p-4 md:p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Score Celebration */}
-        <section className="relative text-center py-12 bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm">
+        <section className="relative text-center py-12 bg-surface-container-lowest dark:bg-surface-container dark:border dark:border-emerald-900/20 rounded-[2rem] overflow-hidden shadow-sm">
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(circle,_#82db6f_1px,_transparent_1px)] bg-[size:20px_20px]" />
           <div className="relative z-10 space-y-6">
             <div
@@ -77,7 +77,7 @@ export default function QuizResultsPage() {
         {/* Achievements & Stats */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
           {/* Badges */}
-          <div className="md:col-span-8 bg-surface-container-lowest p-8 rounded-[1.5rem] space-y-6 shadow-sm border border-outline-variant/10">
+          <div className="md:col-span-8 bg-surface-container-lowest p-8 rounded-[1.5rem] space-y-6 shadow-sm border border-outline-variant/10 dark:border-emerald-900/20">
             <div className="flex justify-between items-center">
               <h3 className="text-2xl font-bold font-headline text-on-surface">অর্জিত ব্যাজ</h3>
               <span className="text-sm font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full">
@@ -128,7 +128,7 @@ export default function QuizResultsPage() {
           </div>
 
           {/* Breakdown */}
-          <div className="md:col-span-12 bg-surface-container-low p-8 rounded-[1.5rem] border border-outline-variant/10">
+          <div className="md:col-span-12 bg-surface-container-low p-8 rounded-[1.5rem] border border-outline-variant/10 dark:border-emerald-900/20">
             <h3 className="text-2xl font-bold font-headline mb-6 text-on-surface">বিস্তারিত ফলাফল</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {breakdown.map((item, i) => (

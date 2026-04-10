@@ -113,7 +113,7 @@ export default function TextbookReaderPage() {
           </section>
 
           {/* Main Content Card */}
-          <section className="bg-surface-container-lowest p-8 md:p-12 rounded-[2rem] shadow-sm border border-outline-variant/10">
+          <section className="bg-surface-container-lowest dark:border dark:border-emerald-900/20 p-8 md:p-12 rounded-[2rem] shadow-sm border border-outline-variant/10 dark:border-emerald-900/20">
             <h3 className="text-3xl font-extrabold text-primary mb-8 font-headline">গসাগু নির্ণয়ের কৌশল</h3>
             <div className="space-y-6 text-lg text-on-surface-variant">
               <p>ভগ্নাংশের গসাগু নির্ণয় করার জন্য আমাদের প্রথমে একটি বিশেষ সূত্র মনে রাখতে হবে:</p>
@@ -139,11 +139,11 @@ export default function TextbookReaderPage() {
                 <h4 className="text-xl font-bold">নিজেই চেষ্টা করো</h4>
               </div>
               <p className="text-lg mb-6">নিচের ভগ্নাংশ দুটির গসাগু কত হবে তা খাতায় লিখে যাচাই করো:</p>
-              <div className="text-3xl font-black text-center text-primary tracking-widest bg-white/70 py-4 rounded-xl">
+              <div className="text-3xl font-black text-center text-primary tracking-widest bg-surface-container-low dark:bg-surface-container py-4 rounded-xl">
                 ৩/৪ , ৫/৬
               </div>
             </div>
-            <div className="bg-red-50 p-8 rounded-[1.5rem] border-b-4 border-secondary">
+            <div className="bg-red-50 dark:bg-secondary-container/10 p-8 rounded-[1.5rem] border-b-4 border-secondary">
               <div className="flex items-center gap-3 mb-4 text-secondary">
                 <span className="material-symbols-outlined">lightbulb</span>
                 <h4 className="text-xl font-bold">মনে রেখো</h4>

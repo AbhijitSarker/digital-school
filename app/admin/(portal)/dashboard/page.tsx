@@ -33,7 +33,7 @@ const quickLinks = [
   { href: '/admin/students', icon: 'group_add', label: 'শিক্ষার্থী যোগ করুন', color: 'bg-primary/10 text-primary' },
   { href: '/admin/content', icon: 'post_add', label: 'কন্টেন্ট তৈরি করুন', color: 'bg-tertiary-fixed/40 text-on-tertiary-fixed-variant' },
   { href: '/admin/quiz-bank', icon: 'add_circle', label: 'কুইজ যোগ করুন', color: 'bg-secondary-fixed/50 text-on-secondary-fixed-variant' },
-  { href: '/admin/analytics', icon: 'bar_chart', label: 'রিপোর্ট দেখুন', color: 'bg-surface-container-high text-on-surface-variant' },
+  { href: '/admin/analytics', icon: 'bar_chart', label: 'রিপোর্ট দেখুন', color: 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30' },
 ];
 
 export default function AdminDashboard() {
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
             <p className="font-label text-xs text-outline tracking-widest font-bold uppercase mb-1">Administrative Overview</p>
             <h2 className="text-3xl font-headline font-extrabold text-primary tracking-tight">শুভেচ্ছা, অ্যাডমিন প্যানেল</h2>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm">
+          <div className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-xl border border-outline-variant/10 dark:border-green-900/10 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-primary-fixed/150 animate-pulse" />
             <span className="text-xs font-label font-bold text-outline uppercase tracking-widest">Server Status</span>
             <span className="text-sm font-semibold text-on-surface ml-1">অপারেশনাল</span>
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
         {/* Metrics bento grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
           {metrics.map((m) => (
-            <div key={m.label} className={`bg-surface-container-lowest p-6 rounded-2xl shadow-sm border-b-4 ${m.border} hover:-translate-y-1 transition-transform`}>
+            <div key={m.label} className={`bg-surface-container dark:border-green-900/10 p-6 rounded-2xl shadow-sm border-b-4 ${m.border} hover:-translate-y-1 transition-transform`}>
               <div className={`w-10 h-10 rounded-xl ${m.iconBg} flex items-center justify-center mb-4`}>
                 <span className={`material-symbols-outlined fill-icon ${m.iconColor}`} style={{ fontSize: '22px' }}>{m.icon}</span>
               </div>
@@ -72,7 +72,7 @@ export default function AdminDashboard() {
         {/* Chart + Activity */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* Chart */}
-          <div className="xl:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-5 md:p-7 flex flex-col gap-4">
+          <div className="xl:col-span-2 bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-5 md:p-7 flex flex-col gap-4">
             <div className="flex justify-between items-start flex-wrap gap-3">
               <div>
                 <h3 className="text-xl font-headline font-bold text-primary">শিক্ষার্থী বৃদ্ধির ধারা</h3>
@@ -102,7 +102,7 @@ export default function AdminDashboard() {
 
           {/* Activity Feed */}
           <div className="bg-surface-container-lowest rounded-2xl shadow-sm flex flex-col">
-            <div className="p-5 border-b border-outline-variant/10">
+            <div className="p-5 border-b border-outline-variant/10 dark:border-green-900/10">
               <h3 className="text-lg font-headline font-bold text-primary">সাম্প্রতিক কার্যক্রম</h3>
               <p className="text-sm text-outline mt-0.5">সিস্টেমের রিয়েল-টাইম ইভেন্টস</p>
             </div>

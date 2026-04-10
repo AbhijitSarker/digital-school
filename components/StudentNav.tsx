@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
 
-const navItems = [
+const mobileNavItems = [
   { href: '/learn', icon: 'home', label: 'হোম' },
-  { href: '/learn/lesson', icon: 'menu_book', label: 'পাঠসমূহ' },
+  { href: '/learn/lesson', icon: 'menu_book', label: 'পাঠ' },
   { href: '/learn/daily-challenge', icon: 'bolt', label: 'চ্যালেঞ্জ' },
   { href: '/learn/mini-game', icon: 'videogame_asset', label: 'গেমস' },
 ];
@@ -22,47 +22,77 @@ export default function StudentNav() {
   return (
     <>
       {/* Desktop Top Nav */}
-      <header className="flex justify-between items-center w-full px-6 py-3 sticky top-0 z-50 bg-emerald-950 dark:bg-[#01160D] backdrop-blur-md shadow-sm border-b border-green-900/30">
+      <header className="
+        flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50
+        bg-emerald-800 dark:bg-emerald-950/90
+        backdrop-blur-md shadow-lg
+        border-b border-emerald-700/50 dark:border-emerald-900/50
+      ">
         <div className="flex items-center gap-4">
-          <Link href="/learn" className="text-2xl font-black tracking-tight text-white font-headline">
+          <Link href="/learn" className="text-2xl font-black tracking-tight font-headline
+            text-white dark:text-emerald-400">
             BanglaQuest
           </Link>
-          <div className="hidden md:flex gap-8 items-center ml-4">
-            <span className="text-white border-b-4 border-primary-fixed pb-1 text-base font-medium">শ্রেণী ৭</span>
-          </div>
+          <nav className="hidden md:flex gap-6 ml-8">
+            <span className="text-white dark:text-emerald-400 border-b-2 border-white dark:border-emerald-400 pb-1 text-sm font-bold">Lessons</span>
+            <Link href="/learn/quiz/start" className="text-emerald-200/70 dark:text-emerald-700 hover:text-white dark:hover:text-emerald-500 transition-colors text-sm font-medium">Quizzes</Link>
+            <Link href="/learn/mini-game" className="text-emerald-200/70 dark:text-emerald-700 hover:text-white dark:hover:text-emerald-500 transition-colors text-sm font-medium">Games</Link>
+          </nav>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg">
-            <span className="material-symbols-outlined fill-icon text-tertiary-fixed-dim">local_fire_department</span>
-            <span className="text-white font-bold font-label">১৫</span>
+
+        <div className="flex items-center gap-2 md:gap-3">
+          {/* Streak badge */}
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full
+            bg-white/15 dark:bg-emerald-900/30
+            border border-white/20 dark:border-emerald-800/50">
+            <span className="material-symbols-outlined fill-icon text-orange-300" style={{ fontSize: '16px' }}>local_fire_department</span>
+            <span className="text-white font-bold font-label text-sm">১৫</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg">
-            <span className="material-symbols-outlined fill-icon text-tertiary-fixed">monetization_on</span>
-            <span className="text-white font-bold font-label">১২৫০</span>
+          {/* XP badge */}
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full
+            bg-white/15 dark:bg-emerald-900/30
+            border border-white/20 dark:border-emerald-800/50">
+            <span className="material-symbols-outlined fill-icon text-yellow-300" style={{ fontSize: '16px' }}>monetization_on</span>
+            <span className="text-white font-bold font-label text-sm">১২৫০</span>
           </div>
-          <ThemeToggle className="hover:bg-white/10 text-white" />
-          <div className="w-9 h-9 rounded-full border-2 border-primary-fixed bg-primary flex items-center justify-center text-on-primary font-bold text-sm">
+
+          <ThemeToggle className="hover:bg-white/15 dark:hover:bg-emerald-900/30 text-white dark:text-emerald-400" />
+
+          <div className="w-9 h-9 rounded-full border-2 border-white/50 dark:border-emerald-500
+            bg-emerald-600 dark:bg-emerald-700
+            flex items-center justify-center text-white font-bold text-sm">
             রা
           </div>
         </div>
       </header>
 
       {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-lowest/95 dark:bg-[#01160D] backdrop-blur-md flex justify-around items-center py-3 px-4 z-50 border-t border-outline-variant/20 dark:border-green-900/30 shadow-lg">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`flex flex-col items-center gap-1 transition-colors ${
-              isActive(item.href) ? 'text-primary' : 'text-on-surface-variant'
-            }`}
-          >
-            <span className={`material-symbols-outlined ${isActive(item.href) ? 'fill-icon' : ''}`}>
-              {item.icon}
-            </span>
-            <span className="text-[10px] font-bold">{item.label}</span>
-          </Link>
-        ))}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 pt-2 pb-4
+        bg-emerald-800/95 dark:bg-emerald-950/95
+        border-t border-emerald-700/40 dark:border-emerald-800/30
+        backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
+        {mobileNavItems.map((item) => {
+          const active = isActive(item.href);
+          return (
+            <Link key={item.href} href={item.href} className="flex flex-col items-center gap-0.5">
+              {active ? (
+                <div className="flex flex-col items-center justify-center
+                  bg-emerald-400 dark:bg-emerald-500
+                  text-emerald-900 dark:text-emerald-950
+                  rounded-xl px-4 py-1.5 shadow-[0_0_15px_rgba(52,211,153,0.4)]
+                  font-bold uppercase tracking-wider text-[10px]">
+                  <span className="material-symbols-outlined fill-icon" style={{ fontSize: '20px' }}>{item.icon}</span>
+                  {item.label}
+                </div>
+              ) : (
+                <>
+                  <span className="material-symbols-outlined text-emerald-200/60 dark:text-emerald-700" style={{ fontSize: '22px' }}>{item.icon}</span>
+                  <span className="text-[10px] font-medium text-emerald-200/50 dark:text-emerald-700/80">{item.label}</span>
+                </>
+              )}
+            </Link>
+          );
+        })}
       </nav>
     </>
   );

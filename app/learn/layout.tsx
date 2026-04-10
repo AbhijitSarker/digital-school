@@ -7,7 +7,7 @@ export default function LearnLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-surface-dim">
+    <div className="min-h-screen bg-surface-dim dark:bg-background">
       <StudentNav />
       <div className="flex">
         <StudentSidebar />

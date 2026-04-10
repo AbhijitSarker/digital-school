@@ -204,7 +204,7 @@ export default function MiniGamePage() {
                   ? 'bg-primary-fixed/15 border-2 border-outline-variant/30 opacity-50 cursor-default'
                   : card.flipped
                   ? 'bg-primary-container shadow-lg border-2 border-primary-fixed scale-105 cursor-default'
-                  : 'bg-surface-container-lowest shadow-sm hover:shadow-md hover:scale-105 cursor-pointer border-b-4 border-primary/10'
+                  : 'bg-surface-container-lowest dark:border dark:border-emerald-900/20 shadow-sm hover:shadow-md hover:scale-105 cursor-pointer border-b-4 border-primary/10'
               }`}
             >
               {card.matched ? (

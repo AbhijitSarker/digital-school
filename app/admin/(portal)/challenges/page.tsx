@@ -13,7 +13,7 @@ const challenges = [
 const statusConfig: Record<string, { label: string; cls: string; dot: string }> = {
   active: { label: 'চলমান', cls: 'bg-primary-fixed/30 text-primary', dot: 'bg-primary-fixed/150' },
   scheduled: { label: 'নির্ধারিত', cls: 'bg-primary/10 text-primary', dot: 'bg-primary' },
-  completed: { label: 'সম্পন্ন', cls: 'bg-surface-container-high text-on-surface-variant', dot: 'bg-outline' },
+  completed: { label: 'সম্পন্ন', cls: 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant', dot: 'bg-outline' },
 };
 
 export default function ChallengesPage() {
@@ -43,7 +43,7 @@ export default function ChallengesPage() {
             { label: 'মোট অংশগ্রহণ', value: '৪৮,৮৮০', icon: 'group', color: 'text-tertiary' },
             { label: 'গড় সমাপ্তি হার', value: '৭২%', icon: 'task_alt', color: 'text-secondary' },
           ].map((c) => (
-            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10">
+            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10 dark:border-green-900/10">
               <span className={`material-symbols-outlined fill-icon ${c.color} block mb-2`} style={{ fontSize: '22px' }}>{c.icon}</span>
               <div className={`text-2xl font-headline font-bold ${c.color}`}>{c.value}</div>
               <div className="text-xs font-label text-outline mt-0.5">{c.label}</div>
@@ -59,7 +59,7 @@ export default function ChallengesPage() {
               ? Math.round((parseInt(c.completions.replace(/,|৳/g, '')) / parseInt(c.participants.replace(/,|৳/g, ''))) * 100)
               : 0;
             return (
-              <div key={c.id} className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 border border-outline-variant/10 hover:shadow-md transition-shadow">
+              <div key={c.id} className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 border border-outline-variant/10 dark:border-green-900/10 hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
@@ -71,7 +71,7 @@ export default function ChallengesPage() {
                     <h3 className="font-headline font-bold text-lg text-on-surface">{c.title}</h3>
                   </div>
                   <div className="flex gap-1.5 shrink-0">
-                    <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                    <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                       <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>edit</span>
                     </button>
                     <button className="p-2 rounded-lg bg-error-container/30 hover:bg-error-container text-error transition-colors">
@@ -123,7 +123,7 @@ export default function ChallengesPage() {
           <div className="bg-surface-container-lowest rounded-3xl shadow-2xl w-full max-w-lg p-8">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-headline font-bold text-primary">নতুন চ্যালেঞ্জ তৈরি</h3>
-              <button onClick={() => setShowModal(false)} className="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+              <button onClick={() => setShowModal(false)} className="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 transition-colors">
                 <span className="material-symbols-outlined">close</span>
               </button>
             </div>
@@ -136,7 +136,7 @@ export default function ChallengesPage() {
               ].map((f) => (
                 <div key={f.label}>
                   <label className="text-xs font-label font-bold text-outline uppercase tracking-wider block mb-1.5">{f.label}</label>
-                  <input type="text" placeholder={f.placeholder} className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 focus:border-primary transition-colors" />
+                  <input type="text" placeholder={f.placeholder} className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 dark:border-green-900/20 focus:border-primary transition-colors" />
                 </div>
               ))}
               <button className="w-full py-3.5 bg-primary text-white rounded-xl font-label font-bold mt-2 hover:opacity-90 transition-opacity">

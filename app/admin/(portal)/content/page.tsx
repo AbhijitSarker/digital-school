@@ -13,7 +13,7 @@ const contentItems = [
 
 const statusConfig: Record<string, { label: string; cls: string }> = {
   published: { label: 'প্রকাশিত', cls: 'bg-primary-fixed/30 text-primary' },
-  draft: { label: 'ড্রাফট', cls: 'bg-surface-container-high text-on-surface-variant' },
+  draft: { label: 'ড্রাফট', cls: 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant' },
   review: { label: 'পর্যালোচনা', cls: 'bg-tertiary-fixed/50 text-on-tertiary-fixed-variant' },
 };
 
@@ -49,7 +49,7 @@ export default function ContentPage() {
             { label: 'ড্রাফট', value: '২১৮', icon: 'edit_note', color: 'text-outline' },
             { label: 'পর্যালোচনায়', value: '৮৩', icon: 'pending', color: 'text-tertiary' },
           ].map((c) => (
-            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10">
+            <div key={c.label} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-outline-variant/10 dark:border-green-900/10">
               <div className="flex items-center gap-2 mb-2">
                 <span className={`material-symbols-outlined fill-icon ${c.color}`} style={{ fontSize: '20px' }}>{c.icon}</span>
                 <span className="text-xs font-label text-outline">{c.label}</span>
@@ -75,7 +75,7 @@ export default function ContentPage() {
         {/* Content grid */}
         <div className="grid grid-cols-1 gap-4">
           {contentItems.map((item) => (
-            <div key={item.id} className="bg-surface-container-lowest rounded-2xl shadow-sm p-5 flex items-center gap-5 hover:shadow-md transition-shadow border border-outline-variant/10">
+            <div key={item.id} className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-5 flex items-center gap-5 hover:shadow-md transition-shadow border border-outline-variant/10 dark:border-green-900/10">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined fill-icon text-primary" style={{ fontSize: '24px' }}>{typeIcons[item.type]}</span>
               </div>
@@ -106,10 +106,10 @@ export default function ContentPage() {
                 </div>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                   <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>edit</span>
                 </button>
-                <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                <button className="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high dark:hover:bg-green-900/10 text-on-surface-variant transition-colors">
                   <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>preview</span>
                 </button>
                 <button className="p-2 rounded-lg bg-error-container/30 hover:bg-error-container text-error transition-colors">

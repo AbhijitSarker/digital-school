@@ -41,7 +41,7 @@ export default function AnalyticsPage() {
                 </button>
               ))}
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-xl border border-outline-variant/20 text-sm font-label font-bold text-on-surface hover:bg-surface-container transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-surface-container dark:border dark:border-green-900/10 rounded-xl border border-outline-variant/20 dark:border-green-900/20 text-sm font-label font-bold text-on-surface hover:bg-surface-container transition-colors">
               <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>download</span>
               রিপোর্ট ডাউনলোড
             </button>
@@ -51,7 +51,7 @@ export default function AnalyticsPage() {
         {/* KPI cards */}
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
           {kpis.map((k) => (
-            <div key={k.label} className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 hover:-translate-y-0.5 transition-transform">
+            <div key={k.label} className="bg-surface-container p-6 rounded-2xl shadow-sm border border-outline-variant/10 dark:border-green-900/10 hover:-translate-y-0.5 transition-transform">
               <div className={`w-10 h-10 rounded-xl ${k.bg} flex items-center justify-center mb-4`}>
                 <span className={`material-symbols-outlined fill-icon ${k.color}`} style={{ fontSize: '20px' }}>{k.icon}</span>
               </div>
@@ -67,7 +67,7 @@ export default function AnalyticsPage() {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* Bar chart */}
-          <div className="xl:col-span-2 bg-surface-container-lowest rounded-2xl shadow-sm p-5 md:p-7">
+          <div className="xl:col-span-2 bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-5 md:p-7">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h3 className="text-xl font-headline font-bold text-primary">মাসিক অ্যাক্টিভিটি</h3>
@@ -92,7 +92,7 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Donut-style distribution */}
-          <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-7">
+          <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-7">
             <h3 className="text-xl font-headline font-bold text-primary mb-1">বিষয় বিতরণ</h3>
             <p className="text-sm text-outline mb-6">কোন বিষয়ে বেশি পাঠ সম্পন্ন</p>
             <div className="relative mx-auto w-36 h-36 mb-6">
@@ -125,14 +125,14 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Subject breakdown table */}
-        <div className="bg-surface-container-lowest rounded-2xl shadow-sm">
-          <div className="p-5 border-b border-outline-variant/10">
+        <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm">
+          <div className="p-5 border-b border-outline-variant/10 dark:border-green-900/10">
             <h3 className="text-lg font-headline font-bold text-primary">বিষয়ভিত্তিক বিশ্লেষণ</h3>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-surface-container-low text-left">
+                <tr className="bg-surface-container-low dark:text-slate-400 text-left">
                   <th className="px-5 py-3 text-xs font-label font-bold text-outline uppercase tracking-wider">বিষয়</th>
                   <th className="px-5 py-3 text-xs font-label font-bold text-outline uppercase tracking-wider">পাঠ সম্পন্ন</th>
                   <th className="px-5 py-3 text-xs font-label font-bold text-outline uppercase tracking-wider">গড় স্কোর</th>
@@ -141,7 +141,7 @@ export default function AnalyticsPage() {
               </thead>
               <tbody className="divide-y divide-outline-variant/10">
                 {subjectStats.map((s) => (
-                  <tr key={s.name} className="hover:bg-surface-container-low/50">
+                  <tr key={s.name} className="hover:bg-surface-container-low/50 dark:hover:bg-green-900/5">
                     <td className="px-5 py-4 font-semibold text-on-surface">{s.name}</td>
                     <td className="px-5 py-4 text-on-surface-variant font-label">{s.completions}</td>
                     <td className="px-5 py-4 font-bold text-primary font-label">{s.avgScore}</td>

@@ -59,8 +59,8 @@ export default function SettingsPage() {
           <div className="flex-1 space-y-4">
             {activeTab === 'general' && (
               <>
-                <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-5">
-                  <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 pb-3">সাধারণ তথ্য</h3>
+                <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-5">
+                  <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 dark:border-green-900/10 pb-3">সাধারণ তথ্য</h3>
                   {[
                     { label: 'সাইটের নাম', value: siteName, onChange: setSiteName, type: 'text' },
                     { label: 'সাপোর্ট ইমেইল', value: supportEmail, onChange: setSupportEmail, type: 'email' },
@@ -73,14 +73,14 @@ export default function SettingsPage() {
                         type={f.type}
                         value={f.value}
                         onChange={(e) => f.onChange(e.target.value)}
-                        className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 focus:border-primary transition-colors"
+                        className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 dark:border-green-900/20 focus:border-primary transition-colors"
                       />
                     </div>
                   ))}
                 </div>
 
-                <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-4">
-                  <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 pb-3">প্রদর্শনী</h3>
+                <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-4">
+                  <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 dark:border-green-900/10 pb-3">প্রদর্শনী</h3>
                   <div className="flex justify-between items-center py-2">
                     <div>
                       <p className="font-medium text-on-surface text-sm">ডার্ক মোড</p>
@@ -93,15 +93,15 @@ export default function SettingsPage() {
             )}
 
             {activeTab === 'notifications' && (
-              <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-4">
-                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 pb-3">বিজ্ঞপ্তি সেটিংস</h3>
+              <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-4">
+                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 dark:border-green-900/10 pb-3">বিজ্ঞপ্তি সেটিংস</h3>
                 {[
                   { label: 'ইমেইল বিজ্ঞপ্তি', desc: 'গুরুত্বপূর্ণ আপডেটে ইমেইল পাবেন', value: emailNotifs, onChange: () => setEmailNotifs(!emailNotifs) },
                   { label: 'পুশ নোটিফিকেশন', desc: 'ব্রাউজারে পুশ বিজ্ঞপ্তি', value: pushNotifs, onChange: () => setPushNotifs(!pushNotifs) },
                   { label: 'নতুন নিবন্ধন সতর্কতা', desc: 'নতুন স্কুল যোগ হলে জানান', value: true, onChange: () => {} },
                   { label: 'সিস্টেম ত্রুটি সতর্কতা', desc: 'সার্ভার ত্রুটিতে তাৎক্ষণিক বিজ্ঞপ্তি', value: true, onChange: () => {} },
                 ].map((s) => (
-                  <div key={s.label} className="flex justify-between items-center py-3 border-b border-outline-variant/10 last:border-0">
+                  <div key={s.label} className="flex justify-between items-center py-3 border-b border-outline-variant/10 dark:border-green-900/10 last:border-0">
                     <div>
                       <p className="font-medium text-on-surface text-sm">{s.label}</p>
                       <p className="text-xs text-outline">{s.desc}</p>
@@ -113,12 +113,12 @@ export default function SettingsPage() {
             )}
 
             {activeTab === 'security' && (
-              <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-4">
-                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 pb-3">নিরাপত্তা</h3>
+              <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-4">
+                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 dark:border-green-900/10 pb-3">নিরাপত্তা</h3>
                 {[
                   { label: 'দুই-ধাপ যাচাইকরণ (2FA)', desc: 'সব অ্যাডমিন লগইনে 2FA বাধ্যতামূলক', value: twoFactor, onChange: () => setTwoFactor(!twoFactor) },
                 ].map((s) => (
-                  <div key={s.label} className="flex justify-between items-center py-3 border-b border-outline-variant/10">
+                  <div key={s.label} className="flex justify-between items-center py-3 border-b border-outline-variant/10 dark:border-green-900/10">
                     <div>
                       <p className="font-medium text-on-surface text-sm">{s.label}</p>
                       <p className="text-xs text-outline">{s.desc}</p>
@@ -128,7 +128,7 @@ export default function SettingsPage() {
                 ))}
                 <div>
                   <label className="text-xs font-label font-bold text-outline uppercase tracking-wider block mb-1.5">সেশন টাইমআউট</label>
-                  <select className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 focus:border-primary">
+                  <select className="w-full bg-surface-container-low px-4 py-3 rounded-xl text-sm outline-none border border-outline-variant/20 dark:border-green-900/20 focus:border-primary">
                     <option>৩০ মিনিট</option>
                     <option>১ ঘন্টা</option>
                     <option>৮ ঘন্টা</option>
@@ -142,16 +142,16 @@ export default function SettingsPage() {
             )}
 
             {activeTab === 'system' && (
-              <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-4">
-                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 pb-3">সিস্টেম</h3>
-                <div className="flex justify-between items-center py-3 border-b border-outline-variant/10">
+              <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-4">
+                <h3 className="font-headline font-bold text-on-surface text-lg border-b border-outline-variant/10 dark:border-green-900/10 pb-3">সিস্টেম</h3>
+                <div className="flex justify-between items-center py-3 border-b border-outline-variant/10 dark:border-green-900/10">
                   <div>
                     <p className="font-medium text-on-surface text-sm">মেইনটেনেন্স মোড</p>
                     <p className="text-xs text-outline">চালু করলে ব্যবহারকারীরা অ্যাক্সেস করতে পারবে না</p>
                   </div>
                   <Toggle value={maintenanceMode} onChange={() => setMaintenanceMode(!maintenanceMode)} />
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-outline-variant/10">
+                <div className="flex justify-between items-center py-3 border-b border-outline-variant/10 dark:border-green-900/10">
                   <div>
                     <p className="font-medium text-on-surface text-sm">স্বয়ংক্রিয় ব্যাকআপ</p>
                     <p className="text-xs text-outline">প্রতিদিন রাত ১২টায় ব্যাকআপ নেওয়া হবে</p>
@@ -159,11 +159,11 @@ export default function SettingsPage() {
                   <Toggle value={autoBackup} onChange={() => setAutoBackup(!autoBackup)} />
                 </div>
                 <div className="grid grid-cols-2 gap-3 mt-2">
-                  <button className="py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                  <button className="py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high dark:hover:bg-green-900/10 transition-colors flex items-center justify-center gap-2">
                     <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>backup</span>
                     এখনই ব্যাকআপ
                   </button>
-                  <button className="py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                  <button className="py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high dark:hover:bg-green-900/10 transition-colors flex items-center justify-center gap-2">
                     <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>cached</span>
                     ক্যাশ পরিষ্কার
                   </button>
@@ -188,7 +188,7 @@ export default function SettingsPage() {
             )}
 
             <div className="flex justify-end gap-3">
-              <button className="px-6 py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high transition-colors">বাতিল করুন</button>
+              <button className="px-6 py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high dark:hover:bg-green-900/10 transition-colors">বাতিল করুন</button>
               <button className="px-6 py-3 bg-primary text-white rounded-xl font-label font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">পরিবর্তন সংরক্ষণ</button>
             </div>
           </div>

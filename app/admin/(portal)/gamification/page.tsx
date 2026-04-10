@@ -7,7 +7,7 @@ const badges = [
   { id: 'B001', name: 'প্রথম পদক্ষেপ', icon: 'stars', color: 'bg-tertiary-fixed text-on-tertiary-fixed', condition: 'প্রথম পাঠ সম্পন্ন', awarded: '১২,৪৫০', active: true },
   { id: 'B002', name: 'কুইজ মাস্টার', icon: 'military_tech', color: 'bg-primary-fixed text-on-primary-fixed', condition: '১০টি কুইজে ৯০%+', awarded: '৩,৮৮০', active: true },
   { id: 'B003', name: 'অগ্নি ধারাবাহিকতা', icon: 'local_fire_department', color: 'bg-secondary-fixed text-on-secondary-fixed', condition: '৩০ দিনের স্ট্রিক', awarded: '৮৮৪', active: true },
-  { id: 'B004', name: 'বাংলা বিশেষজ্ঞ', icon: 'workspace_premium', color: 'bg-surface-container-high text-on-surface-variant', condition: 'সব বাংলা পাঠ শেষ', awarded: '২৪৫', active: false },
+  { id: 'B004', name: 'বাংলা বিশেষজ্ঞ', icon: 'workspace_premium', color: 'bg-surface-container-high text-on-surface dark:bg-surface-container-highest dark:border dark:border-green-900/30-variant', condition: 'সব বাংলা পাঠ শেষ', awarded: '২৪৫', active: false },
 ];
 
 const leaderboard = [
@@ -37,7 +37,7 @@ export default function GamificationPage() {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {/* XP Settings */}
-          <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6 space-y-5">
+          <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6 space-y-5">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 bg-tertiary-fixed/30 rounded-xl flex items-center justify-center">
                 <span className="material-symbols-outlined fill-icon text-tertiary" style={{ fontSize: '22px' }}>stars</span>
@@ -77,7 +77,7 @@ export default function GamificationPage() {
           </div>
 
           {/* Badge Management */}
-          <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6">
+          <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6">
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-headline font-bold text-on-surface">ব্যাজ সমূহ</h3>
               <button className="text-xs font-label font-bold text-primary flex items-center gap-1">
@@ -108,7 +108,7 @@ export default function GamificationPage() {
           </div>
 
           {/* Leaderboard */}
-          <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6">
+          <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6">
             <h3 className="font-headline font-bold text-on-surface mb-4">শীর্ষ শিক্ষার্থী</h3>
             <div className="space-y-2">
               {leaderboard.map((l) => (
@@ -131,7 +131,7 @@ export default function GamificationPage() {
         </div>
 
         {/* Coin shop preview */}
-        <div className="bg-surface-container-lowest rounded-2xl shadow-sm p-6">
+        <div className="bg-surface-container dark:border dark:border-green-900/10 rounded-2xl shadow-sm p-6">
           <div className="flex justify-between items-center mb-5">
             <h3 className="font-headline font-bold text-lg text-on-surface">কয়েন শপ আইটেম</h3>
             <button className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl font-label font-bold text-xs">
@@ -146,7 +146,7 @@ export default function GamificationPage() {
               { name: 'ডাবল XP', cost: '২০০', icon: 'auto_awesome', stock: '১২৫' },
               { name: 'প্রিমিয়াম থিম', cost: '৫০০', icon: 'palette', stock: '৫০' },
             ].map((item) => (
-              <div key={item.name} className="border border-outline-variant/20 rounded-2xl p-4 text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
+              <div key={item.name} className="border border-outline-variant/20 dark:border-green-900/20 rounded-2xl p-4 text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
                 <div className="w-12 h-12 bg-tertiary-fixed/30 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <span className="material-symbols-outlined fill-icon text-tertiary" style={{ fontSize: '24px' }}>{item.icon}</span>
                 </div>

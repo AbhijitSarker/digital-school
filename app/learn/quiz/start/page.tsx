@@ -4,15 +4,15 @@ import Link from 'next/link';
 
 export default function QuizStartPage() {
   return (
-    <div className="bg-surface-dim min-h-screen flex flex-col">
+    <div className="bg-surface-dim dark:bg-background min-h-screen flex flex-col">
       {/* Side Nav */}
       <div className="md:hidden" />
 
       <section className="flex-1 p-4 md:p-12 max-w-5xl mx-auto w-full">
         {/* Browser Frame Container */}
-        <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl border border-outline-variant/10">
+        <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl border border-outline-variant/10 dark:border-emerald-900/20">
           {/* Address Bar */}
-          <div className="bg-surface-container-high px-6 py-3 flex items-center gap-3">
+          <div className="bg-surface-container-high dark:bg-emerald-900/30 px-6 py-3 flex items-center gap-3">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-400" />
               <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -114,7 +114,7 @@ export default function QuizStartPage() {
 
         {/* Rules Cards */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 bg-surface-container-low rounded-xl border border-outline-variant/10 space-y-4">
+          <div className="p-8 bg-surface-container-low rounded-xl border border-outline-variant/10 dark:border-emerald-900/20 space-y-4">
             <div className="flex items-center gap-3 text-primary">
               <span className="material-symbols-outlined">info</span>
               <h4 className="font-bold font-headline text-lg">নিয়মাবলী</h4>
