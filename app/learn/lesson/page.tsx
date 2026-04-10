@@ -199,7 +199,7 @@ export default function AnimatedLessonPage() {
                     Current Passage
                   </p>
                   <p className="text-lg font-body leading-relaxed text-white">
-                    "...একই পরিমাণের বিভিন্ন ভগ্নাংশ রূপ হতে পারে..."
+                    “...একই পরিমাণের বিভিন্ন ভগ্নাংশ রূপ হতে পারে...”
                   </p>
                 </div>
 

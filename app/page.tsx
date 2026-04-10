@@ -411,7 +411,11 @@ export default function LandingPage() {
                     <span key={j} className="material-symbols-outlined fill-icon text-tertiary-fixed-dim" style={{ fontSize: '16px' }}>star</span>
                   ))}
                 </div>
-                <p className="text-on-surface-variant leading-relaxed italic flex-1">"{t.quote}"</p>
+                <p className="text-on-surface-variant leading-relaxed italic flex-1">
+                  <span aria-hidden>“</span>
+                  {t.quote}
+                  <span aria-hidden>”</span>
+                </p>
                 <div className="flex items-center gap-3 pt-2 border-t border-outline-variant/10">
                   <div className="w-10 h-10 rounded-full bg-primary-fixed/40 flex items-center justify-center font-bold text-primary">
                     {t.name[0]}

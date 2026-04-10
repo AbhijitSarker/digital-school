@@ -21,7 +21,6 @@ export default function LeaderboardPage() {
   const [subject, setSubject] = useState("সকল বিষয়");
 
   const top3 = leaders.slice(0, 3);
-  const rest = leaders.slice(3);
 
   return (
     <div className="max-w-5xl mx-auto">

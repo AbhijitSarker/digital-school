@@ -94,7 +94,7 @@ export default function TextbookReaderPage() {
               </p>
               <div className="bg-surface-container-low p-6 rounded-xl border-l-4 border-tertiary">
                 <p className="text-lg italic font-medium text-tertiary">
-                  "গণিতে ভগ্নাংশ হলো কোনো একটি অখণ্ড জিনিসের অংশ নির্দেশকারী সংখ্যা।"
+                  “গণিতে ভগ্নাংশ হলো কোনো একটি অখণ্ড জিনিসের অংশ নির্দেশকারী সংখ্যা।”
                 </p>
               </div>
             </div>

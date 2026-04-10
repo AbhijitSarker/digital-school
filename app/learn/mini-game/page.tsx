@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 type Card = {
@@ -31,19 +31,19 @@ function createCards(): Card[] {
 }
 
 export default function MiniGamePage() {
-  const [cards, setCards] = useState<Card[]>([]);
+  const [cards, setCards] = useState<Card[]>(() => createCards());
   const [flipped, setFlipped] = useState<number[]>([]);
   const [score, setScore] = useState(0);
   const [moves, setMoves] = useState(0);
   const [lives, setLives] = useState(3);
   const [timeLeft, setTimeLeft] = useState(165);
-  const [gameWon, setGameWon] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  useEffect(() => {
-    setCards(createCards());
-  }, []);
+  const gameWon = useMemo(
+    () => cards.length > 0 && cards.every((c) => c.matched),
+    [cards],
+  );
 
   useEffect(() => {
     if (gameWon) return;
@@ -90,12 +90,6 @@ export default function MiniGamePage() {
     }
   };
 
-  useEffect(() => {
-    if (cards.length > 0 && cards.every((c) => c.matched)) {
-      setGameWon(true);
-    }
-  }, [cards]);
-
   const resetGame = () => {
     setCards(createCards());
     setFlipped([]);
@@ -103,7 +97,6 @@ export default function MiniGamePage() {
     setMoves(0);
     setLives(3);
     setTimeLeft(165);
-    setGameWon(false);
   };
 
   const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');

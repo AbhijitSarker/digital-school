@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 const questions = [
   {
@@ -37,7 +36,6 @@ export default function MCQPage() {
   const [revealed, setRevealed] = useState(false);
   const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
   const [showHint, setShowHint] = useState(false);
-  const [score, setScore] = useState(0);
 
   const question = questions[currentQ];
   const totalQuestions = 15;
@@ -75,7 +73,6 @@ export default function MCQPage() {
     if (revealed) return;
     setSelected(idx);
     setRevealed(true);
-    if (idx === question.correct) setScore((s) => s + 1);
   };
 
   const timerPct = (timeLeft / TOTAL_TIME) * 100;

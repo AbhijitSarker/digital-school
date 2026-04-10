@@ -3,6 +3,18 @@
 import { useState } from 'react';
 import AdminHeader from '@/components/AdminHeader';
 
+function SettingsToggle({ value, onChange }: { value: boolean; onChange: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onChange}
+      className={`w-12 h-6 rounded-full transition-colors relative ${value ? 'bg-primary' : 'bg-surface-container-high'}`}
+    >
+      <div className={`w-5 h-5 bg-surface-container-lowest rounded-full absolute top-0.5 transition-all shadow-sm ${value ? 'right-0.5' : 'left-0.5'}`} />
+    </button>
+  );
+}
+
 export default function SettingsPage() {
   const [maintenanceMode, setMaintenanceMode] = useState(false);
   const [emailNotifs, setEmailNotifs] = useState(true);
@@ -13,15 +25,6 @@ export default function SettingsPage() {
   const [siteName, setSiteName] = useState('BanglaQuest');
   const [supportEmail, setSupportEmail] = useState('support@banglaquest.com');
   const [activeTab, setActiveTab] = useState('general');
-
-  const Toggle = ({ value, onChange }: { value: boolean; onChange: () => void }) => (
-    <button
-      onClick={onChange}
-      className={`w-12 h-6 rounded-full transition-colors relative ${value ? 'bg-primary' : 'bg-surface-container-high'}`}
-    >
-      <div className={`w-5 h-5 bg-surface-container-lowest rounded-full absolute top-0.5 transition-all shadow-sm ${value ? 'right-0.5' : 'left-0.5'}`} />
-    </button>
-  );
 
   const tabs = [
     { id: 'general', label: 'সাধারণ', icon: 'settings' },
@@ -86,7 +89,7 @@ export default function SettingsPage() {
                       <p className="font-medium text-on-surface text-sm">ডার্ক মোড</p>
                       <p className="text-xs text-outline">অ্যাডমিন কনসোলে ডার্ক মোড চালু করুন</p>
                     </div>
-                    <Toggle value={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                    <SettingsToggle value={darkMode} onChange={() => setDarkMode(!darkMode)} />
                   </div>
                 </div>
               </>
@@ -106,7 +109,7 @@ export default function SettingsPage() {
                       <p className="font-medium text-on-surface text-sm">{s.label}</p>
                       <p className="text-xs text-outline">{s.desc}</p>
                     </div>
-                    <Toggle value={s.value} onChange={s.onChange} />
+                    <SettingsToggle value={s.value} onChange={s.onChange} />
                   </div>
                 ))}
               </div>
@@ -123,7 +126,7 @@ export default function SettingsPage() {
                       <p className="font-medium text-on-surface text-sm">{s.label}</p>
                       <p className="text-xs text-outline">{s.desc}</p>
                     </div>
-                    <Toggle value={s.value} onChange={s.onChange} />
+                    <SettingsToggle value={s.value} onChange={s.onChange} />
                   </div>
                 ))}
                 <div>
@@ -149,14 +152,14 @@ export default function SettingsPage() {
                     <p className="font-medium text-on-surface text-sm">মেইনটেনেন্স মোড</p>
                     <p className="text-xs text-outline">চালু করলে ব্যবহারকারীরা অ্যাক্সেস করতে পারবে না</p>
                   </div>
-                  <Toggle value={maintenanceMode} onChange={() => setMaintenanceMode(!maintenanceMode)} />
+                  <SettingsToggle value={maintenanceMode} onChange={() => setMaintenanceMode(!maintenanceMode)} />
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-outline-variant/10 dark:border-green-900/10">
                   <div>
                     <p className="font-medium text-on-surface text-sm">স্বয়ংক্রিয় ব্যাকআপ</p>
                     <p className="text-xs text-outline">প্রতিদিন রাত ১২টায় ব্যাকআপ নেওয়া হবে</p>
                   </div>
-                  <Toggle value={autoBackup} onChange={() => setAutoBackup(!autoBackup)} />
+                  <SettingsToggle value={autoBackup} onChange={() => setAutoBackup(!autoBackup)} />
                 </div>
                 <div className="grid grid-cols-2 gap-3 mt-2">
                   <button className="py-3 bg-surface-container rounded-xl font-label font-bold text-sm text-on-surface hover:bg-surface-container-high dark:hover:bg-green-900/10 transition-colors flex items-center justify-center gap-2">

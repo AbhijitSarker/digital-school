@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -9,6 +9,34 @@ type Role = 'parent' | 'student';
 type Step = 1 | 2 | 3;
 
 const classes = ['শ্রেণী ১', 'শ্রেণী ২', 'শ্রেণী ৩', 'শ্রেণী ৪', 'শ্রেণী ৫', 'শ্রেণী ৬', 'শ্রেণী ৭', 'শ্রেণী ৮', 'শ্রেণী ৯', 'শ্রেণী ১০'];
+
+function SignupField({
+  label, error, children,
+}: { label: string; error?: string | undefined; children: ReactNode }) {
+  return (
+    <div className="space-y-1.5">
+      <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider font-label">{label}</label>
+      {children}
+      {error && (
+        <p className="text-xs text-error font-medium flex items-center gap-1">
+          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>error</span>
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SignupInputWrap({ icon, error, children }: { icon: string; error?: boolean; children: ReactNode }) {
+  return (
+    <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 transition-colors bg-surface-container-low ${
+      error ? 'border-error' : 'border-transparent focus-within:border-primary'
+    }`}>
+      <span className="material-symbols-outlined text-outline" style={{ fontSize: '20px' }}>{icon}</span>
+      {children}
+    </div>
+  );
+}
 
 export default function SignupPage() {
   const router = useRouter();
@@ -87,30 +115,6 @@ export default function SignupPage() {
       subtitle: role === 'parent' ? 'আপনার সন্তানকে যুক্ত করুন' : 'আপনার পড়াশোনার স্তর',
     },
   };
-
-  const Field = ({
-    label, error, children,
-  }: { label: string; error?: string | undefined; children: React.ReactNode }) => (
-    <div className="space-y-1.5">
-      <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider font-label">{label}</label>
-      {children}
-      {error && (
-        <p className="text-xs text-error font-medium flex items-center gap-1">
-          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>error</span>
-          {error}
-        </p>
-      )}
-    </div>
-  );
-
-  const InputWrap = ({ icon, error, children }: { icon: string; error?: boolean; children: React.ReactNode }) => (
-    <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 transition-colors bg-surface-container-low ${
-      error ? 'border-error' : 'border-transparent focus-within:border-primary'
-    }`}>
-      <span className="material-symbols-outlined text-outline" style={{ fontSize: '20px' }}>{icon}</span>
-      {children}
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-surface-dim flex flex-col">
@@ -213,8 +217,8 @@ export default function SignupPage() {
                 {/* Step 1: Basic Info */}
                 {step === 1 && (
                   <>
-                    <Field label="পুরো নাম" error={errors.name}>
-                      <InputWrap icon="person" error={!!errors.name}>
+                    <SignupField label="পুরো নাম" error={errors.name}>
+                      <SignupInputWrap icon="person" error={!!errors.name}>
                         <input
                           type="text"
                           placeholder={role === 'parent' ? 'মোঃ আরিফ হোসেন' : 'রাহেলা বেগম'}
@@ -222,11 +226,11 @@ export default function SignupPage() {
                           onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: undefined })); }}
                           className="flex-1 bg-transparent text-on-surface placeholder:text-outline/60 text-sm font-medium outline-none"
                         />
-                      </InputWrap>
-                    </Field>
+                      </SignupInputWrap>
+                    </SignupField>
 
-                    <Field label="ইমেইল ঠিকানা" error={errors.email}>
-                      <InputWrap icon="mail" error={!!errors.email}>
+                    <SignupField label="ইমেইল ঠিকানা" error={errors.email}>
+                      <SignupInputWrap icon="mail" error={!!errors.email}>
                         <input
                           type="email"
                           placeholder="example@gmail.com"
@@ -234,11 +238,11 @@ export default function SignupPage() {
                           onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
                           className="flex-1 bg-transparent text-on-surface placeholder:text-outline/60 text-sm font-medium outline-none"
                         />
-                      </InputWrap>
-                    </Field>
+                      </SignupInputWrap>
+                    </SignupField>
 
-                    <Field label="মোবাইল নম্বর (ঐচ্ছিক)">
-                      <InputWrap icon="phone">
+                    <SignupField label="মোবাইল নম্বর (ঐচ্ছিক)">
+                      <SignupInputWrap icon="phone">
                         <input
                           type="tel"
                           placeholder="+880 1XXXXXXXXX"
@@ -246,15 +250,15 @@ export default function SignupPage() {
                           onChange={(e) => setPhone(e.target.value)}
                           className="flex-1 bg-transparent text-on-surface placeholder:text-outline/60 text-sm font-medium outline-none"
                         />
-                      </InputWrap>
-                    </Field>
+                      </SignupInputWrap>
+                    </SignupField>
                   </>
                 )}
 
                 {/* Step 2: Password */}
                 {step === 2 && (
                   <>
-                    <Field label="পাসওয়ার্ড তৈরি করুন" error={errors.password}>
+                    <SignupField label="পাসওয়ার্ড তৈরি করুন" error={errors.password}>
                       <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 transition-colors bg-surface-container-low ${
                         errors.password ? 'border-error' : 'border-transparent focus-within:border-primary'
                       }`}>
@@ -276,7 +280,7 @@ export default function SignupPage() {
                           </span>
                         </button>
                       </div>
-                    </Field>
+                    </SignupField>
 
                     {/* Password strength */}
                     {password.length > 0 && (
@@ -333,8 +337,8 @@ export default function SignupPage() {
                   <>
                     {role === 'parent' ? (
                       <>
-                        <Field label="সন্তানের নাম" error={errors.childName}>
-                          <InputWrap icon="child_care" error={!!errors.childName}>
+                        <SignupField label="সন্তানের নাম" error={errors.childName}>
+                          <SignupInputWrap icon="child_care" error={!!errors.childName}>
                             <input
                               type="text"
                               placeholder="তানভীর আহমেদ"
@@ -342,10 +346,10 @@ export default function SignupPage() {
                               onChange={(e) => { setChildName(e.target.value); setErrors((p) => ({ ...p, childName: undefined })); }}
                               className="flex-1 bg-transparent text-on-surface placeholder:text-outline/60 text-sm font-medium outline-none"
                             />
-                          </InputWrap>
-                        </Field>
+                          </SignupInputWrap>
+                        </SignupField>
 
-                        <Field label="সন্তানের শ্রেণী" error={errors.childClass}>
+                        <SignupField label="সন্তানের শ্রেণী" error={errors.childClass}>
                           <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 bg-surface-container-low transition-colors ${
                             errors.childClass ? 'border-error' : 'border-transparent focus-within:border-primary'
                           }`}>
@@ -360,22 +364,22 @@ export default function SignupPage() {
                             </select>
                             <span className="material-symbols-outlined text-outline" style={{ fontSize: '16px' }}>expand_more</span>
                           </div>
-                        </Field>
+                        </SignupField>
 
-                        <Field label="সন্তানের জন্ম তারিখ (ঐচ্ছিক)">
-                          <InputWrap icon="cake">
+                        <SignupField label="সন্তানের জন্ম তারিখ (ঐচ্ছিক)">
+                          <SignupInputWrap icon="cake">
                             <input
                               type="date"
                               value={childDob}
                               onChange={(e) => setChildDob(e.target.value)}
                               className="flex-1 bg-transparent text-on-surface text-sm font-medium outline-none"
                             />
-                          </InputWrap>
-                        </Field>
+                          </SignupInputWrap>
+                        </SignupField>
                       </>
                     ) : (
                       <>
-                        <Field label="আপনার শ্রেণী" error={errors.studentClass}>
+                        <SignupField label="আপনার শ্রেণী" error={errors.studentClass}>
                           <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 bg-surface-container-low transition-colors ${
                             errors.studentClass ? 'border-error' : 'border-transparent focus-within:border-primary'
                           }`}>
@@ -390,10 +394,10 @@ export default function SignupPage() {
                             </select>
                             <span className="material-symbols-outlined text-outline" style={{ fontSize: '16px' }}>expand_more</span>
                           </div>
-                        </Field>
+                        </SignupField>
 
-                        <Field label="অভিভাবকের কোড (ঐচ্ছিক)">
-                          <InputWrap icon="link">
+                        <SignupField label="অভিভাবকের কোড (ঐচ্ছিক)">
+                          <SignupInputWrap icon="link">
                             <input
                               type="text"
                               placeholder="BQ-XXXXXX"
@@ -401,11 +405,11 @@ export default function SignupPage() {
                               onChange={(e) => setParentCode(e.target.value)}
                               className="flex-1 bg-transparent text-on-surface placeholder:text-outline/60 text-sm font-medium outline-none uppercase tracking-widest"
                             />
-                          </InputWrap>
+                          </SignupInputWrap>
                           <p className="text-xs text-on-surface-variant mt-1 pl-1">
                             অভিভাবক যদি আমন্ত্রণ পাঠিয়ে থাকেন, তাহলে তাঁর কোড এখানে দিন।
                           </p>
-                        </Field>
+                        </SignupField>
 
                         {/* XP Preview */}
                         <div className="p-4 bg-tertiary-fixed/20 rounded-xl flex items-center gap-3 border border-tertiary-fixed-dim/20">

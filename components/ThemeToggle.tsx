@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 interface ThemeToggleProps {
   /** 'icon' = icon-only button (default), 'full' = icon + label */
@@ -9,13 +9,18 @@ interface ThemeToggleProps {
   className?: string;
 }
 
+function useIsClient() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+}
+
 export default function ThemeToggle({ variant = 'icon', className = '' }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return <div className="w-9 h-9" />;
+  const isClient = useIsClient();
+  if (!isClient) return <div className="w-9 h-9" />;
 
   const isDark = theme === 'dark';
 

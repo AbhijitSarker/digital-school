@@ -254,7 +254,7 @@ export default function ProgressPage() {
                 মাইলস্টোন অর্জিত!
               </h3>
               <p className="text-tertiary-fixed/80 max-w-md text-sm md:text-base">
-                আপনার সন্তান "ভাষা সৈনিক" ব্যাজ অর্জনের পথে ৯৫% এগিয়ে আছে।
+                আপনার সন্তান “ভাষা সৈনিক” ব্যাজ অর্জনের পথে ৯৫% এগিয়ে আছে।
                 আর মাত্র একটি কুইজ বাকি!
               </p>
             </div>

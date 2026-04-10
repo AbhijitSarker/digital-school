@@ -71,7 +71,7 @@ export default function DailyChallengeEntryPage() {
           <div className="max-w-xl w-full bg-surface-container-low p-1 rounded-3xl mb-8">
             <div className="bg-surface-container-lowest rounded-2xl px-8 md:px-12 py-10 shadow-inner">
               <p className="text-on-surface-variant mb-6 italic">
-                "গণিত হলো মানুষের আত্মার সুন্দরতম সঙ্গীত।"
+                “গণিত হলো মানুষের আত্মার সুন্দরতম সঙ্গীত।”
               </p>
               <Link
                 href="/learn/quiz/mcq"
