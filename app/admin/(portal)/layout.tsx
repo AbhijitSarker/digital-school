@@ -1,46 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { createContext, useContext } from 'react';
 import AdminSidebar from '@/components/AdminSidebar';
+import AdminTopNav from '@/components/AdminTopNav';
+import AdminMobileNav from '@/components/AdminMobileNav';
+
+// Context kept for backward compatibility (no-op on mobile now)
+export const AdminMenuContext = createContext<() => void>(() => {});
+export const useAdminMenu = () => useContext(AdminMenuContext);
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-surface-dim dark:bg-background">
-      <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+    <div className="min-h-screen bg-surface">
+      <AdminTopNav />
+      <AdminSidebar />
 
-      {/* Main content — full width on mobile, offset by sidebar on desktop */}
-      <div className="lg:ml-64 min-h-screen flex flex-col">
-        {/* Pass toggle handler to children via context would be ideal, but we clone the
-            first child prop instead. Simpler: expose via a wrapper that injects the prop. */}
-        {/* Children use AdminHeader which receives onMenuToggle via the layout wrapper */}
-        <AdminLayoutContent onMenuToggle={() => setSidebarOpen((v) => !v)}>
-          {children}
-        </AdminLayoutContent>
-      </div>
+      {/* Main content — offset by sidebar on desktop, pt-16 clears the fixed nav, pb-20 clears mobile bottom nav */}
+      <main className="lg:ml-64 pt-16 pb-20 lg:pb-0 min-h-screen bg-surface-dim/20">
+        <div className="p-4 md:p-8">{children}</div>
+      </main>
+
+      <AdminMobileNav />
     </div>
   );
 }
-
-function AdminLayoutContent({
-  children,
-  onMenuToggle,
-}: {
-  children: React.ReactNode;
-  onMenuToggle: () => void;
-}) {
-  // Inject onMenuToggle into all AdminHeader children via a context
-  // (pages import AdminHeader directly, so we use a context provider)
-  return (
-    <AdminMenuContext.Provider value={onMenuToggle}>
-      {children}
-    </AdminMenuContext.Provider>
-  );
-}
-
-// Context so every AdminHeader in the tree can access the toggle
-import { createContext, useContext } from 'react';
-
-export const AdminMenuContext = createContext<() => void>(() => {});
-export const useAdminMenu = () => useContext(AdminMenuContext);

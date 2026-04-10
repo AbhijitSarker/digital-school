@@ -1,33 +1,29 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const primaryItems = [
-  { href: "/dashboard", icon: "dashboard", label: "হোম" },
-  { href: "/dashboard/progress", icon: "trending_up", label: "অগ্রগতি" },
-  { href: "/dashboard/subjects", icon: "menu_book", label: "বিষয়" },
-  { href: "/dashboard/gamification", icon: "military_tech", label: "অর্জন" },
+  { href: '/admin/dashboard', icon: 'dashboard', label: 'Overview' },
+  { href: '/admin/students', icon: 'group', label: 'Students' },
+  { href: '/admin/content', icon: 'library_books', label: 'Content' },
+  { href: '/admin/analytics', icon: 'insights', label: 'Analytics' },
 ];
 
 const overflowItems = [
-  { href: "/dashboard/quiz-history", icon: "history", label: "কুইজ ইতিহাস" },
-  { href: "/dashboard/leaderboard", icon: "leaderboard", label: "লিডারবোর্ড" },
-  { href: "/dashboard/reports", icon: "assessment", label: "রিপোর্ট" },
-  { href: "/dashboard/notifications", icon: "notifications", label: "বিজ্ঞপ্তি" },
-  { href: "/dashboard/profile", icon: "person", label: "প্রোফাইল" },
+  { href: '/admin/quiz-bank', icon: 'quiz', label: 'Quiz Bank' },
+  { href: '/admin/gamification', icon: 'military_tech', label: 'Gamification' },
+  { href: '/admin/schools', icon: 'domain', label: 'Schools' },
+  { href: '/admin/challenges', icon: 'emoji_events', label: 'Challenges' },
+  { href: '/admin/settings', icon: 'settings_applications', label: 'Settings' },
 ];
 
-export default function MobileNav() {
+export default function AdminMobileNav() {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const isActive = (href: string) => {
-    if (href === "/dashboard") return pathname === "/dashboard";
-    return pathname.startsWith(href);
-  };
-
+  const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
   const anyOverflowActive = overflowItems.some((item) => isActive(item.href));
 
   return (
@@ -35,14 +31,14 @@ export default function MobileNav() {
       {/* Backdrop */}
       {drawerOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/40 z-40 backdrop-blur-sm"
+          className="lg:hidden fixed inset-0 bg-black/40 z-40 backdrop-blur-sm"
           onClick={() => setDrawerOpen(false)}
         />
       )}
 
       {/* Slide-up More drawer */}
       <div
-        className={`md:hidden fixed left-0 right-0 z-50 transition-transform duration-300 ease-out
+        className={`lg:hidden fixed left-0 right-0 z-50 transition-transform duration-300 ease-out
           bg-surface-container-lowest dark:bg-[#082016]
           border-t border-emerald-100/70 dark:border-green-900/30
           rounded-t-3xl shadow-2xl
@@ -66,8 +62,8 @@ export default function MobileNav() {
                   onClick={() => setDrawerOpen(false)}
                   className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
                     active
-                      ? "bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-primary"
-                      : "text-on-surface-variant hover:bg-surface-container dark:hover:bg-green-900/10"
+                      ? 'bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-primary'
+                      : 'text-on-surface-variant hover:bg-surface-container dark:hover:bg-green-900/10'
                   }`}
                 >
                   <span
@@ -85,11 +81,12 @@ export default function MobileNav() {
       </div>
 
       {/* Bottom Tab Bar */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50
+      <nav className="lg:hidden fixed bottom-0 left-0 w-full z-50
         bg-white/95 dark:bg-[#01160D]
         backdrop-blur-xl
         border-t border-emerald-100/70 dark:border-green-900/30
         flex justify-around items-center py-2">
+
         {primaryItems.map((item) => {
           const active = isActive(item.href);
           return (
@@ -97,7 +94,7 @@ export default function MobileNav() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center gap-0.5 p-2 min-w-0 transition-colors ${
-                active ? "text-emerald-700 dark:text-primary" : "text-slate-400 dark:text-on-surface-variant"
+                active ? 'text-emerald-700 dark:text-primary' : 'text-slate-400 dark:text-on-surface-variant'
               }`}
             >
               <span
@@ -116,8 +113,8 @@ export default function MobileNav() {
           onClick={() => setDrawerOpen(!drawerOpen)}
           className={`flex flex-col items-center gap-0.5 p-2 min-w-0 transition-colors ${
             anyOverflowActive || drawerOpen
-              ? "text-emerald-700 dark:text-primary"
-              : "text-slate-400 dark:text-on-surface-variant"
+              ? 'text-emerald-700 dark:text-primary'
+              : 'text-slate-400 dark:text-on-surface-variant'
           }`}
         >
           <span

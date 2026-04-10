@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const contentItems = [
   { id: 'CNT001', title: 'ভগ্নাংশের গাণিতিক ধারণা', subject: 'গণিত', class: 'শ্রেণী ৬', type: 'পাঠ', status: 'published', views: '৪,২৫০', updated: '১০ মে ২০২৪' },
@@ -27,7 +26,6 @@ export default function ContentPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Content" breadcrumb="admin / content" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

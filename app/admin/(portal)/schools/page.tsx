@@ -1,6 +1,5 @@
 'use client';
 
-import AdminHeader from '@/components/AdminHeader';
 
 const schools = [
   { id: 'SCH001', name: 'ঢাকা মডেল স্কুল অ্যান্ড কলেজ', district: 'ঢাকা', students: '৮৮৪', plan: 'প্রিমিয়াম', activeRate: '৯৫%', joined: 'জানু ২০২৩', status: 'active' },
@@ -20,7 +19,6 @@ const planConfig: Record<string, string> = {
 export default function SchoolsPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Schools" breadcrumb="admin / schools" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

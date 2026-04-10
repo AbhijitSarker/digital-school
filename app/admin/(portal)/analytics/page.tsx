@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const kpis = [
   { label: 'মোট পাঠ সম্পন্ন', value: '৮৪,৩২০', delta: '+৬.২%', up: true, icon: 'menu_book', color: 'text-primary', bg: 'bg-primary/10' },
@@ -25,7 +24,6 @@ export default function AnalyticsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Analytics" breadcrumb="admin / analytics" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

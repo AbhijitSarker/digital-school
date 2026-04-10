@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 function SettingsToggle({ value, onChange }: { value: boolean; onChange: () => void }) {
   return (
@@ -35,7 +34,6 @@ export default function SettingsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Settings" breadcrumb="admin / settings" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const quizzes = [
   { id: 'QZ001', title: 'ভগ্নাংশের গাণিতিক সমস্যা', subject: 'গণিত', class: 'শ্রেণী ৬', questions: 15, difficulty: 'মাঝারি', attempts: '৩,৪৪০', avgScore: '৮২%', status: 'active' },
@@ -24,7 +23,6 @@ export default function QuizBankPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Quiz Bank" breadcrumb="admin / quiz-bank" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

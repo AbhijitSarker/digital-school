@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const students = [
   { id: 'STU001', name: 'তানভীর আহমেদ', class: 'শ্রেণী ৬', school: 'ঢাকা মডেল স্কুল', xp: '২,৫৫০', streak: '১৫ দিন', score: '৯২%', status: 'active', joined: '১৫ জানু ২০২৪' },
@@ -30,7 +29,6 @@ export default function StudentsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Students" breadcrumb="admin / students" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         {/* Header */}

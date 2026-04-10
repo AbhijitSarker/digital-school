@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
   { href: '/learn', icon: 'home', label: 'হোম' },
-  { href: '/learn/lesson', icon: 'menu_book', label: 'পাঠসমূহ' },
+  { href: '/learn/chapter', icon: 'auto_stories', label: 'অধ্যায়সমূহ' },
+  { href: '/learn/lesson', icon: 'menu_book', label: 'পাঠ' },
   { href: '/learn/daily-challenge', icon: 'bolt', label: 'ডেইলি চ্যালেঞ্জ' },
   { href: '/learn/mini-game', icon: 'videogame_asset', label: 'মিনি গেমস' },
   { href: '/dashboard', icon: 'dashboard', label: 'অভিভাবক ড্যাশবোর্ড' },
@@ -16,14 +17,14 @@ export default function StudentSidebar() {
 
   const isActive = (href: string) => {
     if (href === '/learn') return pathname === '/learn';
+    if (href === '/learn/chapter') return pathname.startsWith('/learn/chapter');
     return pathname.startsWith(href);
   };
 
   return (
-    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 z-40
+    <aside className="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 pt-16 z-40
       bg-[#f2f7f4] dark:bg-[#01160D]
       border-r border-emerald-100/70 dark:border-green-900/30
-      shadow-2xl shadow-black/20
     ">
       {/* Header */}
       <div className="px-6 pt-6 pb-4 border-b border-emerald-100/70 dark:border-green-900/30">

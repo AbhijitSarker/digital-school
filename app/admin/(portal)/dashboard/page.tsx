@@ -1,6 +1,5 @@
 'use client';
 
-import AdminHeader from '@/components/AdminHeader';
 import Link from 'next/link';
 
 const metrics = [
@@ -39,7 +38,6 @@ const quickLinks = [
 export default function AdminDashboard() {
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Dashboard" breadcrumb="dashboard / overview" />
 
         <div className="p-4 md:p-8 space-y-6 md:space-y-8">
         {/* Welcome row */}

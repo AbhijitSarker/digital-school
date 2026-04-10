@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const challenges = [
   { id: 'CH001', title: 'আজকের ভগ্নাংশ চ্যালেঞ্জ', subject: 'গণিত', class: 'শ্রেণী ৬', date: '১৩ মে ২০২৪', reward: '৫০০ কয়েন', participants: '৩,২২০', completions: '২,৪৮৮', status: 'active' },
@@ -21,7 +20,6 @@ export default function ChallengesPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Challenges" breadcrumb="admin / challenges" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

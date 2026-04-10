@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import AdminHeader from '@/components/AdminHeader';
 
 const badges = [
   { id: 'B001', name: 'প্রথম পদক্ষেপ', icon: 'stars', color: 'bg-tertiary-fixed text-on-tertiary-fixed', condition: 'প্রথম পাঠ সম্পন্ন', awarded: '১২,৪৫০', active: true },
@@ -25,7 +24,6 @@ export default function GamificationPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AdminHeader title="Gamification" breadcrumb="admin / gamification" />
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">
