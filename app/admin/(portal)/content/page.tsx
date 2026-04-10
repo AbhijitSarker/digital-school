@@ -25,7 +25,7 @@ export default function ContentPage() {
   const [activeTab, setActiveTab] = useState('all');
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div className="flex justify-between items-end flex-wrap gap-4">

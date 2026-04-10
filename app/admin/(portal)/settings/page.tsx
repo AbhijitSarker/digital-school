@@ -33,7 +33,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
 
       <div className="p-4 md:p-8 space-y-5 md:space-y-6">
         <div>

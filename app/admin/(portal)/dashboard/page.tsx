@@ -37,7 +37,7 @@ const quickLinks = [
 
 export default function AdminDashboard() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
 
         <div className="p-4 md:p-8 space-y-6 md:space-y-8">
         {/* Welcome row */}
