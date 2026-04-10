@@ -62,8 +62,8 @@ export default function AdminMobileNav() {
                   onClick={() => setDrawerOpen(false)}
                   className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
                     active
-                      ? 'bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-primary'
-                      : 'text-on-surface-variant hover:bg-surface-container dark:hover:bg-green-900/10'
+                      ? 'bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-emerald-400'
+                      : 'text-slate-500 dark:text-slate-400 hover:bg-surface-container dark:hover:bg-green-900/10'
                   }`}
                 >
                   <span
@@ -94,7 +94,9 @@ export default function AdminMobileNav() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center gap-0.5 p-2 min-w-0 transition-colors ${
-                active ? 'text-emerald-700 dark:text-primary' : 'text-slate-400 dark:text-on-surface-variant'
+                active
+                  ? 'text-emerald-700 dark:text-emerald-400'
+                  : 'text-slate-500 dark:text-slate-400'
               }`}
             >
               <span
@@ -113,8 +115,8 @@ export default function AdminMobileNav() {
           onClick={() => setDrawerOpen(!drawerOpen)}
           className={`flex flex-col items-center gap-0.5 p-2 min-w-0 transition-colors ${
             anyOverflowActive || drawerOpen
-              ? 'text-emerald-700 dark:text-primary'
-              : 'text-slate-400 dark:text-on-surface-variant'
+              ? 'text-emerald-700 dark:text-emerald-400'
+              : 'text-slate-500 dark:text-slate-400'
           }`}
         >
           <span

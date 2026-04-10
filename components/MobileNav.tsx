@@ -55,6 +55,33 @@ export default function MobileNav() {
           <div className="w-10 h-1 rounded-full bg-outline-variant/40 dark:bg-green-900/60" />
         </div>
         <div className="px-4 pt-2 pb-4">
+          <p className="text-xs font-label uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2 px-2">ভিউ পরিবর্তন</p>
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <Link
+              href="/dashboard"
+              onClick={() => setDrawerOpen(false)}
+              className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
+                pathname.startsWith("/dashboard")
+                  ? "bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-emerald-400"
+                  : "text-slate-500 dark:text-slate-400 hover:bg-surface-container dark:hover:bg-green-900/10"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">dashboard</span>
+              <span className="text-[10px] font-label font-bold text-center leading-tight">অভিভাবক</span>
+            </Link>
+            <Link
+              href="/learn"
+              onClick={() => setDrawerOpen(false)}
+              className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
+                pathname.startsWith("/learn")
+                  ? "bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-emerald-400"
+                  : "text-slate-500 dark:text-slate-400 hover:bg-surface-container dark:hover:bg-green-900/10"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">school</span>
+              <span className="text-[10px] font-label font-bold text-center leading-tight">শিক্ষার্থী</span>
+            </Link>
+          </div>
           <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-3 px-2">আরও পেজসমূহ</p>
           <div className="grid grid-cols-5 gap-2">
             {overflowItems.map((item) => {

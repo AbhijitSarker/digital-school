@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const primaryItems = [
   { href: '/learn', icon: 'home', label: 'হোম', exact: true },
-  { href: '/learn/chapter', icon: 'auto_stories', label: 'অধ্যায়' },
+  { href: '/learn/chapters', icon: 'auto_stories', label: 'অধ্যায়' },
   { href: '/learn/daily-challenge', icon: 'bolt', label: 'চ্যালেঞ্জ' },
   { href: '/learn/mini-game', icon: 'videogame_asset', label: 'গেমস' },
 ];
@@ -16,11 +16,11 @@ const overflowItems = [
   { href: '/learn/lesson', icon: 'menu_book', label: 'পাঠ' },
   { href: '/learn/quiz/start', icon: 'quiz', label: 'কুইজ' },
   { href: '/learn/level-up', icon: 'military_tech', label: 'লেভেল' },
-  { href: '/dashboard', icon: 'dashboard', label: 'অভিভাবক' },
 ];
 
 const breadcrumbMap: Record<string, string> = {
   '/learn': 'হোম',
+  '/learn/chapters': 'অধ্যায়সমূহ',
   '/learn/lesson': 'পাঠ',
   '/learn/daily-challenge': 'ডেইলি চ্যালেঞ্জ',
   '/learn/mini-game': 'মিনি গেমস',
@@ -35,10 +35,12 @@ const breadcrumbMap: Record<string, string> = {
 export default function StudentNav() {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (href: string, exact?: boolean) => {
     if (exact || href === '/learn') return pathname === href;
-    if (href === '/learn/chapter') return pathname.startsWith('/learn/chapter');
+    if (href === '/learn/chapters') return pathname.startsWith('/learn/chapters');
     return pathname.startsWith(href);
   };
 
@@ -46,7 +48,19 @@ export default function StudentNav() {
 
   const crumb = pathname.startsWith('/learn/chapter/')
     ? 'অধ্যায়'
+    : pathname.startsWith('/learn/chapters')
+    ? 'অধ্যায়সমূহ'
     : breadcrumbMap[pathname] ?? 'শিক্ষা';
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -70,7 +84,7 @@ export default function StudentNav() {
           <nav className="hidden lg:flex gap-5 ml-4">
             {[
               { href: '/learn', label: 'হোম', exact: true },
-              { href: '/learn/chapter', label: 'অধ্যায়' },
+              { href: '/learn/chapters', label: 'অধ্যায়' },
               { href: '/learn/quiz/start', label: 'কুইজ', match: '/learn/quiz' },
               { href: '/learn/mini-game', label: 'গেমস' },
             ].map((item) => {
@@ -117,18 +131,106 @@ export default function StudentNav() {
 
           <ThemeToggle className="hover:bg-emerald-50 dark:hover:bg-green-900/20" />
 
-          {/* Student avatar pill */}
-          <div className="flex items-center gap-2 bg-primary/10 dark:bg-primary/15 px-2 py-1 rounded-full border border-primary/20 cursor-pointer hover:bg-primary/20 transition-colors">
-            <div className="w-6 h-6 rounded-full bg-primary-container dark:bg-emerald-700 flex items-center justify-center text-on-primary-container dark:text-white font-bold text-xs shrink-0">
-              রা
-            </div>
-            <span className="hidden sm:inline text-sm font-semibold text-slate-700 dark:text-on-surface">রাহেলা</span>
-            <span className="material-symbols-outlined text-[16px] text-slate-400 dark:text-on-surface-variant hidden sm:inline">expand_more</span>
-          </div>
+          {/* Student avatar dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setDropdownOpen((v) => !v)}
+              className="flex items-center gap-2 bg-primary/10 dark:bg-primary/15 px-2 py-1 rounded-full border border-primary/20
+                hover:bg-primary/20 dark:hover:bg-primary/25 transition-colors"
+            >
+              <div className="w-6 h-6 rounded-full bg-primary-container dark:bg-emerald-700 flex items-center justify-center text-on-primary-container dark:text-white font-bold text-xs shrink-0">
+                রা
+              </div>
+              <div className="hidden sm:flex flex-col items-start leading-none">
+                <span className="text-sm font-semibold text-slate-700 dark:text-on-surface">রাহেলা</span>
+                <span className="text-[10px] text-slate-400 dark:text-on-surface-variant font-label">শিক্ষার্থী</span>
+              </div>
+              <span className={`material-symbols-outlined text-[16px] text-slate-400 dark:text-on-surface-variant transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}>
+                expand_more
+              </span>
+            </button>
 
-          <Link href="/" className="hidden md:inline text-sm font-bold text-secondary hover:underline">
-            Logout
-          </Link>
+            {dropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 w-64 rounded-2xl shadow-xl
+                bg-white dark:bg-[#082016]
+                border border-emerald-100/80 dark:border-green-900/40
+                overflow-hidden z-50">
+                <div className="px-4 py-3 bg-emerald-50/60 dark:bg-green-900/20 border-b border-emerald-100/60 dark:border-green-900/30 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-container dark:bg-emerald-700 flex items-center justify-center text-on-primary-container dark:text-white font-bold text-sm">
+                    রা
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm text-slate-800 dark:text-on-surface font-headline">রাহেলা</p>
+                    <p className="text-xs text-slate-500 dark:text-on-surface-variant font-label">শ্রেণী ৭ · Level 12 · 1250 XP</p>
+                  </div>
+                </div>
+
+                {/* Switch view — parent vs student only */}
+                <div className="px-3 py-2.5 border-b border-emerald-100/40 dark:border-green-900/20">
+                  <p className="text-[10px] font-label uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2 px-1">
+                    ভিউ পরিবর্তন
+                  </p>
+                  <div className="grid grid-cols-2 gap-1.5">
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setDropdownOpen(false)}
+                      className={`flex flex-col items-center gap-0.5 py-2 px-1 rounded-xl text-center transition-colors ${
+                        pathname.startsWith('/dashboard')
+                          ? 'bg-emerald-100 dark:bg-green-900/30 text-emerald-800 dark:text-emerald-400'
+                          : 'bg-emerald-50/40 dark:bg-green-900/10 text-slate-600 dark:text-slate-300 hover:bg-emerald-100/60 dark:hover:bg-green-900/20'
+                      }`}
+                    >
+                      <span className="material-symbols-outlined text-[20px]">dashboard</span>
+                      <span className="text-[10px] font-label font-bold leading-tight">অভিভাবক</span>
+                    </Link>
+                    <Link
+                      href="/learn"
+                      onClick={() => setDropdownOpen(false)}
+                      className={`flex flex-col items-center gap-0.5 py-2 px-1 rounded-xl text-center transition-colors ${
+                        pathname.startsWith('/learn')
+                          ? 'bg-emerald-100 dark:bg-green-900/30 text-emerald-800 dark:text-emerald-400'
+                          : 'bg-emerald-50/40 dark:bg-green-900/10 text-slate-600 dark:text-slate-300 hover:bg-emerald-100/60 dark:hover:bg-green-900/20'
+                      }`}
+                    >
+                      <span className="material-symbols-outlined text-[20px]">school</span>
+                      <span className="text-[10px] font-label font-bold leading-tight">শিক্ষার্থী</span>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="py-1.5">
+                  {[
+                    { href: '/learn/chapters', icon: 'auto_stories', label: 'অধ্যায়সমূহ' },
+                    { href: '/learn/quiz/start', icon: 'quiz', label: 'কুইজ শুরু' },
+                    { href: '/learn/mini-game', icon: 'videogame_asset', label: 'মিনি গেমস' },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-emerald-50/80 dark:hover:bg-green-900/15 transition-colors"
+                    >
+                      <span className="material-symbols-outlined text-emerald-600 dark:text-primary text-[18px]">{item.icon}</span>
+                      <span className="flex-1 text-sm text-slate-700 dark:text-on-surface font-label">{item.label}</span>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="px-4 pb-3 pt-1 border-t border-emerald-100/40 dark:border-green-900/20">
+                  <Link
+                    href="/"
+                    onClick={() => setDropdownOpen(false)}
+                    className="w-full flex items-center gap-3 py-2 px-3 rounded-xl
+                      hover:bg-red-50 dark:hover:bg-red-900/15
+                      text-red-500 dark:text-red-400 transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">logout</span>
+                    <span className="text-sm font-semibold font-label">Logout</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
@@ -154,8 +256,35 @@ export default function StudentNav() {
           <div className="w-10 h-1 rounded-full bg-outline-variant/40 dark:bg-green-900/60" />
         </div>
         <div className="px-4 pt-2 pb-4">
+          <p className="text-xs font-label uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2 px-2">ভিউ পরিবর্তন</p>
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <Link
+              href="/dashboard"
+              onClick={() => setDrawerOpen(false)}
+              className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
+                pathname.startsWith('/dashboard')
+                  ? 'bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-emerald-400'
+                  : 'text-slate-500 dark:text-slate-400 hover:bg-surface-container dark:hover:bg-green-900/10'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">dashboard</span>
+              <span className="text-[10px] font-label font-bold text-center leading-tight">অভিভাবক</span>
+            </Link>
+            <Link
+              href="/learn"
+              onClick={() => setDrawerOpen(false)}
+              className={`flex flex-col items-center gap-1 p-2 rounded-2xl transition-all ${
+                pathname.startsWith('/learn')
+                  ? 'bg-emerald-100 dark:bg-green-600/15 text-emerald-800 dark:text-emerald-400'
+                  : 'text-slate-500 dark:text-slate-400 hover:bg-surface-container dark:hover:bg-green-900/10'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">school</span>
+              <span className="text-[10px] font-label font-bold text-center leading-tight">শিক্ষার্থী</span>
+            </Link>
+          </div>
           <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-3 px-2">আরও পেজসমূহ</p>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-3 gap-2">
             {overflowItems.map((item) => {
               const active = isActive(item.href);
               return (

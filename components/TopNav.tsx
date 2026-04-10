@@ -119,13 +119,45 @@ export default function TopNav() {
                 </div>
               </div>
 
+              {/* Switch view */}
+              <div className="px-3 py-2.5 border-b border-emerald-100/40 dark:border-green-900/20">
+                <p className="text-[10px] font-label uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2 px-1">
+                  Switch view
+                </p>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {[
+                    { href: "/dashboard", icon: "dashboard", label: "Parent" },
+                    { href: "/learn", icon: "school", label: "Student" },
+                  ].map((v) => {
+                    const active =
+                      v.href === "/dashboard"
+                        ? pathname.startsWith("/dashboard")
+                        : pathname.startsWith("/learn");
+                    return (
+                      <Link
+                        key={v.href}
+                        href={v.href}
+                        onClick={() => setDropdownOpen(false)}
+                        className={`flex flex-col items-center gap-0.5 py-2 px-1 rounded-xl text-center transition-colors ${
+                          active
+                            ? "bg-emerald-100 dark:bg-green-900/30 text-emerald-800 dark:text-emerald-400"
+                            : "bg-emerald-50/40 dark:bg-green-900/10 text-slate-600 dark:text-slate-300 hover:bg-emerald-100/60 dark:hover:bg-green-900/20"
+                        }`}
+                      >
+                        <span className="material-symbols-outlined text-[20px]">{v.icon}</span>
+                        <span className="text-[10px] font-label font-bold leading-tight">{v.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Menu items */}
               <div className="py-1.5">
                 {[
                   { href: "/dashboard/profile", icon: "person", label: "Profile & Settings" },
                   { href: "/dashboard/notifications", icon: "notifications", label: "Notifications", badge: "3" },
                   { href: "/dashboard/progress", icon: "trending_up", label: "Progress Report" },
-                  { href: "/learn", icon: "school", label: "Switch to Student View" },
                 ].map((item) => (
                   <Link
                     key={item.href}
